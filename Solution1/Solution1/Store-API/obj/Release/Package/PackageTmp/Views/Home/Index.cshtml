@@ -1,0 +1,77 @@
+<br />
+<br />
+<form action="@Url.Action("save", "Home")" method="post">
+    <input type="text" name="TableName" placeholder="Modules Name" />
+    <input type="text" name="ProcedureName" placeholder="Procedure Name" />
+    <input type="text" name="FlieName" placeholder="Controler Name" />
+    <input type="text" name="FolderName" placeholder="Folder Name" />
+    <input type="submit" value="Save Select" />
+</form>
+
+<form action="@Url.Action("saveInsert", "Home")" method="post">
+    <input type="text" name="TableName" placeholder="Table Name" />
+    <input type="text" name="DataAccessName" placeholder="DataAccess Name" />
+    <input type="text" name="EntityName" placeholder="Entity Name" />
+    <input type="text" name="FolderName" placeholder="Folder Name" />
+    <input type="submit" value="Save Insert Update Delete" />
+</form>
+
+
+<form method="post" id="form_Submit">
+    <input type="text" placeholder="page_unique" name="page_unique" />
+    <input type="text" placeholder="page_url" name="page_url" />
+    <input type="text" placeholder="page" name="page" />
+    <input type="button" value="Sent to trob" onclick="send()" />
+</form>
+<div id="form_View">
+
+</div>
+
+<hr />
+<h3>تست ارسال پیام بله (sendMessge)</h3>
+<div style="padding:10px;border:1px solid #ccc;max-width:560px;direction:rtl;font-family:Tahoma;">
+    <form method="get" action="@Url.Action("TestBaleMessage", "Home")" style="margin:0;">
+        <label>CompanyID (اگر Token/ChatID خالی باشد از شرکت خوانده می‌شود):</label>
+        <input type="text" name="CompanyID" value="1" style="width:80px;" />
+        <br /><br />
+        <label>Token بله:</label>
+        <input type="text" name="Token" value="1030185617:1nKIxP8IMEP81DtKu0_LDgXISRdI3uXDjD8" style="width:420px;" />
+        <br /><br />
+        <label>ChatID:</label>
+        <input type="text" name="ChatID" value="1629905562" style="width:160px;" />
+        <br /><br />
+        <label>نام (FullName):</label>
+        <input type="text" name="FullName" value="تست بله" style="width:220px;" />
+        <br /><br />
+        <label>موبایل:</label>
+        <input type="text" name="Mobile" value="09120000000" style="width:160px;" />
+        <br /><br />
+        <input type="submit" value="ارسال پیام تست به بله" style="padding:8px 16px;cursor:pointer;" />
+    </form>
+</div>
+
+@section scripts {
+<script>
+    function send() {
+        if (typeof jQuery === "undefined") {
+            alert("jQuery لود نشده است");
+            return;
+        }
+        var Data = $("#form_Submit").serialize();
+        $.ajax({
+            traditional: true,
+            type: "Post",
+            url: "http://torob.farshdastani.ir/api/products/post",
+            dataType: "html",
+            data: Data,
+            success: function (response) {
+                alert(response);
+                $("#form_View").html(response);
+            },
+            error: function (ex) {
+                alert(ex.responseText);
+            }
+        });
+    }
+</script>
+}

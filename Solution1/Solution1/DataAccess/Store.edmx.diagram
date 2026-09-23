@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="12a4d5413ed44b279439e6975b03566e" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="StoreModel.CompanyNameDetail" Width="1.5" PointX="10" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Currency" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Customer" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Product" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.ProductDescription" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.ProductImage" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.Purchase" Width="1.5" PointX="9.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.UserMenu" Width="1.5" PointX="11.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.UserProfile" Width="1.5" PointX="12.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.UserRole" Width="1.5" PointX="6.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreModel.UserSubMenu" Width="1.5" PointX="13.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="StoreModel.FK_Product_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreModel.FK_ProductDescription_Product" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StoreModel.BasicData" Width="1.5" PointX="10.25" PointY="15" />
+        <EntityTypeShape EntityType="StoreModel.ProductGroupDetail" Width="1.5" PointX="6.875" PointY="9.875" />
+        <EntityTypeShape EntityType="StoreModel.ProductGroup" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="StoreModel.PurchaseDetail" Width="1.5" PointX="13.75" PointY="13.75" />
+        <AssociationConnector Association="StoreModel.FK_Product_ProductGroup" />
+        <EntityTypeShape EntityType="StoreModel.CompanyProductGroup" Width="1.5" PointX="3" PointY="14.625" />
+        <AssociationConnector Association="StoreModel.FK_CompanyProductGroup_ProductGroup" />
+        <EntityTypeShape EntityType="StoreModel.PageGenerator" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StoreModel.Setting" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="StoreModel.CompanySetting" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="StoreModel.ProductUserComment" Width="1.5" PointX="5.25" PointY="5.75" />
+        <AssociationConnector Association="StoreModel.FK_ProductUserComment_Product" />
+        <EntityTypeShape EntityType="StoreModel.PageMenu" Width="1.5" PointX="16.375" PointY="7.75" />
+        <EntityTypeShape EntityType="StoreModel.ProductDetail" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="StoreModel.ProductSpecification" Width="1.5" PointX="3" PointY="19" />
+        <AssociationConnector Association="StoreModel.FK_ProductDetail_Product" />
+        <AssociationConnector Association="StoreModel.FK_ProductSpecification_ProductGroup" />
+        <EntityTypeShape EntityType="StoreModel.UserAccess" Width="1.5" PointX="7.375" PointY="16.75" />
+        <EntityTypeShape EntityType="StoreModel.Company" Width="1.5" PointX="7.75" PointY="20.25" />
+        <AssociationConnector Association="StoreModel.FK_CompanyNameDetail_Company" />
+        <EntityTypeShape EntityType="StoreModel.Payment" Width="1.5" PointX="16.375" PointY="10.75" />
+        <EntityTypeShape EntityType="StoreModel.BankAcount" Width="1.5" PointX="16.375" PointY="15.75" />
+        <EntityTypeShape EntityType="StoreModel.CompanyTransportation" Width="1.5" PointX="17.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

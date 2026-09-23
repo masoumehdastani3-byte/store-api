@@ -1,0 +1,1402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CompanyNameDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="StoreModel.FK_CompanyNameDetail_Company" FromRole="CompanyNameDetail" ToRole="Company" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CourrencyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_Product_Currency" FromRole="Currency" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CodeMelli" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="ProductGroupID" Type="Int32" />
+    <Property Name="PriceBuy" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OffPercent" Type="Int32" />
+    <Property Name="PriceSales" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Positive" Type="Int32" />
+    <Property Name="Negative" Type="Int32" />
+    <Property Name="CreaeDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Acive" Type="Boolean" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <Property Name="AvailableCount" Type="Int32" />
+    <Property Name="SalesCount" Type="Int32" />
+    <Property Name="IsSpecialSales" Type="Boolean" />
+    <Property Name="FromDateSpecialSales_Mila" Type="DateTime" Precision="0" />
+    <Property Name="FromDateSpecialSales" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ToDateSpecialSales_Mila" Type="DateTime" Precision="0" />
+    <Property Name="ToDateSpecialSales" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BarCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Currency1" Relationship="Self.FK_Product_Currency" FromRole="Product" ToRole="Currency" />
+    <NavigationProperty Name="ProductDescriptions" Relationship="Self.FK_ProductDescription_Product" FromRole="Product" ToRole="ProductDescription" />
+    <Property Name="SumerySpecification" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductGroup" Relationship="StoreModel.FK_Product_ProductGroup" FromRole="Product" ToRole="ProductGroup" />
+    <Property Name="IsViewInstagram" Type="Boolean" />
+    <Property Name="IsViewTelegram" Type="Boolean" />
+    <Property Name="IsSendInstagram" Type="Boolean" />
+    <Property Name="IsSendTelegram" Type="Boolean" />
+    <Property Name="TelegramError" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="InstagramError" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="InstagramTag" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="TelegramTimeSend" Type="DateTime" Precision="3" />
+    <Property Name="IstagramTimeSend" Type="DateTime" Precision="3" />
+    <Property Name="IsOffPercent" Type="Boolean" />
+    <Property Name="VisitedCount" Type="Int32" />
+    <NavigationProperty Name="ProductUserComments" Relationship="StoreModel.FK_ProductUserComment_Product" FromRole="Product" ToRole="ProductUserComment" />
+    <NavigationProperty Name="ProductDetails" Relationship="StoreModel.FK_ProductDetail_Product" FromRole="Product" ToRole="ProductDetail" />
+    <Property Name="TransportationID" Type="Int32" />
+    <Property Name="UpdateDateAvailableCount" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ParentLangID" Type="Int32" />
+    <Property Name="IsShow" Type="Boolean" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ProductDescription_Product" FromRole="ProductDescription" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Image_Url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsDefault" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="DateShamsi" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TotalDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Description_Admin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TransportationAmount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="UserMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ControlID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="IsShow" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="LastDateVisit" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="NationalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="TokenID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="FullName_En" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tell" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentLangID" Type="Int32" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserSubMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyIDMenu" Type="Int32" />
+    <Property Name="TitleMenu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ControlID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SelectorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SortMenu" Type="Int32" />
+    <Property Name="IsShowMenu" Type="Boolean" />
+    <Property Name="ActiveMenu" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Product_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyCode" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDescription_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StoreEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompanyNameDetails" EntityType="Self.CompanyNameDetail" />
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductDescriptions" EntityType="Self.ProductDescription" />
+    <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+    <EntitySet Name="UserMenus" EntityType="Self.UserMenu" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="UserSubMenus" EntityType="Self.UserSubMenu" />
+    <AssociationSet Name="FK_Product_Currency" Association="Self.FK_Product_Currency">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDescription_Product" Association="Self.FK_ProductDescription_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductDescription" EntitySet="ProductDescriptions" />
+    </AssociationSet>
+    <FunctionImport Name="sp_BaseData_GroupSelect" ReturnType="Collection(StoreModel.sp_BaseData_GroupSelect_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="CodeChar" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductImage_Select" ReturnType="Collection(StoreModel.sp_ProductImage_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SystemParameterProcudure" ReturnType="Collection(StoreModel.sp_SystemParameterProcudure_Result)">
+      <Parameter Name="Sp_Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_SystemTableCOLUMN" ReturnType="Collection(StoreModel.sp_SystemTableCOLUMN_Result)">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_TableCOLUMN" ReturnType="Collection(StoreModel.sp_TableCOLUMN_Result)">
+      <Parameter Name="TableName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UserProfile_Select" ReturnType="Collection(StoreModel.sp_UserProfile_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Family" Mode="In" Type="String" />
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="TokenID" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="NationalCode" Mode="In" Type="String" />
+      <Parameter Name="IsDefaultCompany" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UserRole_Select" ReturnType="Collection(StoreModel.sp_UserRole_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="RoleName" Mode="In" Type="String" />
+      <Parameter Name="ParentLangID" Mode="In" Type="Int32" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UserSubMenu_Select" ReturnType="Collection(StoreModel.sp_UserSubMenu_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="ControlID" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="IsShow" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="BasicDatas" EntityType="StoreModel.BasicData" />
+    <FunctionImport Name="sp_BasicDate_Select" ReturnType="Collection(StoreModel.sp_BasicDate_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="GroupType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_BaseData_Select" ReturnType="Collection(StoreModel.sp_BaseData_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="GroupType" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="CodeChar" Mode="In" Type="String" />
+      <Parameter Name="CodeINT" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="ProductGroupDetails" EntityType="StoreModel.ProductGroupDetail" />
+    <FunctionImport Name="sp_ProductGroupDetail_GroupBy_Select" ReturnType="Collection(StoreModel.sp_ProductGroupDetail_GroupBy_Select_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ProductGroups" EntityType="StoreModel.ProductGroup" />
+    <EntitySet Name="PurchaseDetails" EntityType="StoreModel.PurchaseDetail" />
+    <AssociationSet Name="FK_Product_ProductGroup" Association="StoreModel.FK_Product_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <FunctionImport Name="sp_ProductGroup_Select" ReturnType="Collection(StoreModel.sp_ProductGroup_Select_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="ParentID" Mode="In" Type="Int32" />
+      <Parameter Name="parent_Title" Mode="In" Type="String" />
+      <Parameter Name="child_Title" Mode="In" Type="String" />
+      <Parameter Name="IsLastChid" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="CompanyProductGroups" EntityType="StoreModel.CompanyProductGroup" />
+    <AssociationSet Name="FK_CompanyProductGroup_ProductGroup" Association="StoreModel.FK_CompanyProductGroup_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="CompanyProductGroup" EntitySet="CompanyProductGroups" />
+    </AssociationSet>
+    <FunctionImport Name="sp_CompanyProductGroup_Select" ReturnType="Collection(StoreModel.sp_CompanyProductGroup_Select_Result)">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProductGroup_SelectRecursives" ReturnType="Collection(StoreModel.ProductGroup_SelectRecursives_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_CompanySettings_Select" ReturnType="Collection(StoreModel.sp_CompanySettings_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="PageGenerators" EntityType="StoreModel.PageGenerator" />
+    <EntitySet Name="Settings" EntityType="StoreModel.Setting" />
+    <FunctionImport Name="sp_UserMenu_Select" ReturnType="Collection(StoreModel.sp_UserMenu_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="IsShow" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_VisitedHistory_GroupBy_Select" ReturnType="Collection(StoreModel.sp_VisitedHistory_GroupBy_Select_Result)">
+      <Parameter Name="FromTime" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CompanySettings" EntityType="StoreModel.CompanySetting" />
+    <EntitySet Name="ProductUserComments" EntityType="StoreModel.ProductUserComment" />
+    <AssociationSet Name="FK_ProductUserComment_Product" Association="StoreModel.FK_ProductUserComment_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductUserComment" EntitySet="ProductUserComments" />
+    </AssociationSet>
+    <FunctionImport Name="sp_PageGenerator_Select" ReturnType="Collection(StoreModel.sp_PageGenerator_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="LogUser" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="PageLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="Content" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="PageMenus" EntityType="StoreModel.PageMenu" />
+    <FunctionImport Name="sp_PageMenu_Select" ReturnType="Collection(StoreModel.sp_PageMenu_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductUserComment_Select" ReturnType="Collection(StoreModel.sp_ProductUserComment_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UserProfile_Login" ReturnType="Collection(StoreModel.sp_UserProfile_Login_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductSpecification_Select" ReturnType="Collection(StoreModel.sp_ProductSpecification_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="GroupType" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="GroupTypeName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ProductDetails" EntityType="StoreModel.ProductDetail" />
+    <EntitySet Name="ProductSpecifications" EntityType="StoreModel.ProductSpecification" />
+    <AssociationSet Name="FK_ProductDetail_Product" Association="StoreModel.FK_ProductDetail_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductDetail" EntitySet="ProductDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSpecification_ProductGroup" Association="StoreModel.FK_ProductSpecification_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroups" />
+      <End Role="ProductSpecification" EntitySet="ProductSpecifications" />
+    </AssociationSet>
+    <FunctionImport Name="sp_ProductDetail_Specification_Select" ReturnType="Collection(StoreModel.sp_ProductDetail_Specification_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="UserAccesses" EntityType="StoreModel.UserAccess" />
+    <FunctionImport Name="sp_UserAcessMenu_Select" ReturnType="Collection(StoreModel.sp_UserAcessMenu_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+      <Parameter Name="ControlID" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="IsShow" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_UserNotAcessMenu_Select" ReturnType="Collection(StoreModel.sp_UserNotAcessMenu_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+      <Parameter Name="ControlID" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="IsShow" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <EntitySet Name="Companies" EntityType="StoreModel.Company" />
+    <AssociationSet Name="FK_CompanyNameDetail_Company" Association="StoreModel.FK_CompanyNameDetail_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="CompanyNameDetail" EntitySet="CompanyNameDetails" />
+    </AssociationSet>
+    <FunctionImport Name="sp_Company_Select" ReturnType="Collection(StoreModel.sp_Company_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="IP" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CountryID_BasicData" Mode="In" Type="Int32" />
+      <Parameter Name="CityID_BasicData" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="IsDefaultCompany" Mode="In" Type="Boolean" />
+      <Parameter Name="CompanyGroupID_BaseData" Mode="In" Type="Int32" />
+      <Parameter Name="WebsiteUrl" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Payment_Select" ReturnType="Collection(StoreModel.sp_Payment_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="PurchaseID" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Payments" EntityType="StoreModel.Payment" />
+    <FunctionImport Name="sp_Customer_Select" ReturnType="Collection(StoreModel.sp_Customer_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="CodeMelli" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="BankAcounts" EntityType="StoreModel.BankAcount" />
+    <FunctionImport Name="sp_Purchase_Select" ReturnType="Collection(StoreModel.sp_Purchase_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductDatail_Select" ReturnType="Collection(StoreModel.sp_ProductDatail_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="IsShowSearch" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Product_Select" ReturnType="Collection(StoreModel.sp_Product_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="IsSpecialSales" Mode="In" Type="Boolean" />
+      <Parameter Name="IsNewCreate" Mode="In" Type="Boolean" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="StringParamGroupType" Mode="In" Type="String" />
+      <Parameter Name="StringParamGroupName" Mode="In" Type="String" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="OrderByColumn" Mode="In" Type="String" />
+      <Parameter Name="OrderDirection" Mode="In" Type="Int32" />
+      <Parameter Name="AvailableCount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductSameSearch" ReturnType="Collection(StoreModel.sp_ProductSameSearch_Result)">
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Product_Select_Torob" ReturnType="Collection(StoreModel.sp_Product_Select_Torob_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="Loguser" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+      <Parameter Name="Url" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ProductGroupDetail_Select" ReturnType="Collection(StoreModel.sp_ProductGroupDetail_Select_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CompanyTransportations" EntityType="StoreModel.CompanyTransportation" />
+    <FunctionImport Name="sp_CompanyTransportation_Select" ReturnType="Collection(StoreModel.sp_CompanyTransportation_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="TransportationCalculate_BasicData" Mode="In" Type="Int32" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Product_Panel_Select" ReturnType="Collection(StoreModel.sp_Product_Panel_Select_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="BarCode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="IsAvailable" Mode="In" Type="Boolean" />
+      <Parameter Name="Acive" Mode="In" Type="Boolean" />
+      <Parameter Name="IsViewTelegram" Mode="In" Type="Boolean" />
+      <Parameter Name="IsViewInstagram" Mode="In" Type="Boolean" />
+      <Parameter Name="IsSendInstagram" Mode="In" Type="Boolean" />
+      <Parameter Name="IsSendTelegram" Mode="In" Type="Boolean" />
+      <Parameter Name="IsSpecialSales" Mode="In" Type="Boolean" />
+      <Parameter Name="Specification" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Product_Select_Elmaz" ReturnType="Collection(StoreModel.sp_Product_Select_Elmaz_Result)">
+      <Parameter Name="Lang" Mode="In" Type="String" />
+      <Parameter Name="LogIP" Mode="In" Type="String" />
+      <Parameter Name="ProductGroupID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_BaseData_GroupSelect_Result">
+    <Property Type="String" Name="GroupType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductImage_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductID" Nullable="true" />
+    <Property Type="String" Name="Image_Url" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsDefault" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_SystemParameterProcudure_Result">
+    <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="types_name" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="parameters_name" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="sp_SystemTableCOLUMN_Result">
+    <Property Type="String" Name="COLUMN_NAME" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="IS_NULLABLE" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="DATA_TYPE" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="MAXIMUM" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_TableCOLUMN_Result">
+    <Property Type="String" Name="COLUMN_NAME" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="IS_NULLABLE" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DATA_TYPE" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="MAXIMUM" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_UserProfile_Select_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="LastDateVisit" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Family" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="NationalCode" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Gender" Nullable="true" />
+    <Property Type="Int32" Name="RoleID" Nullable="true" />
+    <Property Type="String" Name="TokenID" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GenderName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_UserRole_Select_Result">
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Lang" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ParentLangID" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_UserSubMenu_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="TitleMenu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="SortMenu" Nullable="true" />
+    <Property Type="Boolean" Name="IsShowMenu" Nullable="true" />
+    <Property Type="Boolean" Name="ActiveMenu" Nullable="true" />
+    <Property Type="String" Name="ControlID" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CompanyIDMenu" Nullable="true" />
+    <Property Type="String" Name="SelectorID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="BasicData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title_EN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GroupTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="GroupTypeName_En" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CodeINT" Type="Int32" />
+    <Property Name="CodeChar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsDefault" Type="Boolean" />
+  </EntityType>
+  <ComplexType Name="sp_BasicDate_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="GroupType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CodeINT" Nullable="true" />
+    <Property Type="String" Name="CodeChar" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Boolean" Name="Show" Nullable="true" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_BaseData_Select_Result">
+    <Property Type="Boolean" Name="IsDefault" Nullable="true" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Show" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="CodeChar" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CodeINT" Nullable="true" />
+    <Property Type="String" Name="GroupTypeName_En" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="GroupTypeName_Fa" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GroupType" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ProductGroupDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGroupID" Type="Int32" />
+    <Property Name="GroupTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsShowSearch" Type="Boolean" />
+    <Property Name="GroupTypeName_En" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="IsShowEasySearch" Type="Boolean" />
+  </EntityType>
+  <ComplexType Name="sp_ProductGroupDetail_GroupBy_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="ProductGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title_En" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="StoreModel.FK_Product_ProductGroup" FromRole="ProductGroup" ToRole="Product" />
+    <Property Name="IsLastChid" Type="Boolean" />
+    <NavigationProperty Name="CompanyProductGroups" Relationship="StoreModel.FK_CompanyProductGroup_ProductGroup" FromRole="ProductGroup" ToRole="CompanyProductGroup" />
+    <NavigationProperty Name="ProductSpecifications" Relationship="StoreModel.FK_ProductSpecification_ProductGroup" FromRole="ProductGroup" ToRole="ProductSpecification" />
+  </EntityType>
+  <EntityType Name="PurchaseDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseID" Type="Int32" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ShoppingCount" Type="Int32" />
+    <Property Name="ProducName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AvalaibleCount" Type="Int32" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UnitDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalUnitDisount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Product_ProductGroup">
+    <End Type="StoreModel.ProductGroup" Role="ProductGroup" Multiplicity="0..1" />
+    <End Type="StoreModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_ProductGroup_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title_En" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="parent_Title" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsLastChid" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="CompanyProductGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="ProductGroupID" Type="Int32" />
+    <NavigationProperty Name="ProductGroup" Relationship="StoreModel.FK_CompanyProductGroup_ProductGroup" FromRole="CompanyProductGroup" ToRole="ProductGroup" />
+  </EntityType>
+  <Association Name="FK_CompanyProductGroup_ProductGroup">
+    <End Type="StoreModel.ProductGroup" Role="ProductGroup" Multiplicity="0..1" />
+    <End Type="StoreModel.CompanyProductGroup" Role="CompanyProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyProductGroup">
+        <PropertyRef Name="ProductGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_CompanyProductGroup_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title_En" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountProduct" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ProductGroup_SelectRecursives_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title_En" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="IsLastChid" Nullable="true" />
+    <Property Type="String" Name="ID_Path" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_CompanySettings_Select_Result">
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="SettingName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="SettinCaption" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SettingValue" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Descriptions" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Category" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="PageGenerator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="PageTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageLocationID" Type="Int32" />
+    <Property Name="PageLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="PageSystemCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="SettingKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SettingValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sp_UserMenu_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lang" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Sort" Nullable="true" />
+    <Property Type="Boolean" Name="IsShow" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="ControlID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_VisitedHistory_GroupBy_Select_Result">
+    <Property Type="Int32" Name="CountVisited" Nullable="true" />
+    <Property Type="String" Name="Date_Shamsi" Nullable="true" MaxLength="4000" />
+    <Property Type="DateTime" Name="Date_Miladi" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="CompanySetting">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SettingName" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="SettingName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SettinCaption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SettingValue" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ProductUserComment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="Lang" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="Product" Relationship="StoreModel.FK_ProductUserComment_Product" FromRole="ProductUserComment" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_ProductUserComment_Product">
+    <End Type="StoreModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="StoreModel.ProductUserComment" Role="ProductUserComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductUserComment">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_PageGenerator_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="PageTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PageLocationID" Nullable="true" />
+    <Property Type="String" Name="PageLocation" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PageContent" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Sort" Nullable="true" />
+    <Property Type="String" Name="MenuTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PageSystemCode" Nullable="true" />
+    <Property Type="String" Name="SystemName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PageUrl" Nullable="true" MaxLength="209" />
+  </ComplexType>
+  <EntityType Name="PageMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="MenuTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="SystemCode" Type="Int32" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sp_PageMenu_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="MenuTitle" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="SystemCode" Nullable="true" />
+    <Property Type="String" Name="SystemName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductUserComment_Select_Result">
+    <Property Type="Int32" Name="ProductID" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="Lang" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogIP" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BarCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Date_Shamsi" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="sp_UserProfile_Login_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Family" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="RoleID" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="NationalCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TokenID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LogoUrl" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="IsDefault" Nullable="true" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductSpecification_Select_Result">
+    <Property Type="Boolean" Name="IsDefault" Nullable="true" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Show" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="String" Name="GroupTypeName_En" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="GroupTypeName_Fa" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="GroupType" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="ProductSpecificationID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="StoreModel.FK_ProductDetail_Product" FromRole="ProductDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductSpecification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="GroupType" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GroupTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="GroupTypeName_En" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <NavigationProperty Name="ProductGroup" Relationship="StoreModel.FK_ProductSpecification_ProductGroup" FromRole="ProductSpecification" ToRole="ProductGroup" />
+  </EntityType>
+  <Association Name="FK_ProductDetail_Product">
+    <End Type="StoreModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="StoreModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSpecification_ProductGroup">
+    <End Type="StoreModel.ProductGroup" Role="ProductGroup" Multiplicity="1" />
+    <End Type="StoreModel.ProductSpecification" Role="ProductSpecification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSpecification">
+        <PropertyRef Name="GroupType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_ProductDetail_Specification_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductID" Nullable="true" />
+    <Property Type="Int32" Name="ProductSpecificationID" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="GroupType" Nullable="false" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <EntityType Name="UserAccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SelectorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="sp_UserAcessMenu_Select_Result">
+    <Property Type="String" Name="TitleMenu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ControlID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SelectorID" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_UserNotAcessMenu_Select_Result">
+    <Property Type="String" Name="TitleMenu" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SelectorID" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tell" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="WatsUpNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="SMSNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="WebsiteUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TelegramUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="TelegramBotToken" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TelegramChanalName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TelegramChatID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TelegramUserChatID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelegramUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InstagramUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="InstagramUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InstagramPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogoUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BackgroudUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="LogUser" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="CountryID_BasicData" Type="Int32" />
+    <Property Name="CityID_BasicData" Type="Int32" />
+    <Property Name="CompanyGroupID_BaseData" Type="Int32" />
+    <Property Name="ContractName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="IsDefault" Type="Boolean" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ButtonColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HeaderFontColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ButtonFontColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PriceColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PriceFontColor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="VisitedCount" Type="Int32" />
+    <Property Name="isParent" Type="Int32" />
+    <Property Name="ParentID" Type="Int32" />
+    <NavigationProperty Name="CompanyNameDetails" Relationship="StoreModel.FK_CompanyNameDetail_Company" FromRole="Company" ToRole="CompanyNameDetail" />
+    <Property Name="NamadTag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LicenseTag1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LicenseTag2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="VideoDefault_ImageUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SocialNetworks1_LogUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SocialNetworks2_LogUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SocialNetworks1_Url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SocialNetworks2_Url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CompanyNameDetail_Company">
+    <End Type="StoreModel.Company" Role="Company" Multiplicity="0..1" />
+    <End Type="StoreModel.CompanyNameDetail" Role="CompanyNameDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyNameDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_Company_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CityName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CountryTitle" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="2000" />
+    <Property Type="String" Name="TelegramChanalName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="TelegramChatID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TelegramUserChatID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TelegramUserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="InstagramUserName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="InstagramPassword" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tell" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="WatsUpNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="SMSNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="WebsiteUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TelegramUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="InstagramUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="TelegramBotToken" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LogoUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="BackgroundUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ContractName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="CityID_BasicData" Nullable="true" />
+    <Property Type="Int32" Name="CountryID_BasicData" Nullable="true" />
+    <Property Type="String" Name="CompanyGroup_Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CompanyGroupID_BaseData" Nullable="true" />
+    <Property Type="String" Name="HeaderColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ButtonColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="HeaderFontColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ButtonFontColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PriceColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PriceFontColor" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NamadTag" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="LicenseTag1" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="LicenseTag2" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="VideoDefault_ImageUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SocialNetworks1_LogUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SocialNetworks2_LogUrl" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SocialNetworks1_Url" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="SocialNetworks2_Url" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_Payment_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PurchaseID" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreateDate_Shamsi" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="PaymentType" Nullable="true" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Error" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="BankRefrence" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PaymentStatusTitle" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PaymentTypeTilte" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="PurchaseID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate_Shamsi" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PaymentType" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Error" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="BankRefrence" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sp_Customer_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="BankAcount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Terminal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReturnURL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <ComplexType Name="sp_Purchase_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="DateShamsi" Nullable="true" MaxLength="11" />
+    <Property Type="Decimal" Name="Total" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CodeMelli" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="ShoppingCount" Nullable="true" />
+    <Property Type="String" Name="ProducName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="AvalaibleCount" Nullable="true" />
+    <Property Type="Int32" Name="ProductID" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="StatusName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DiscountCode" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalDiscount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="UnitDiscount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TotalUnitDisount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="BankRefrence" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PaymentStatusTitle" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PaymentTypeTilte" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductDatail_Select_Result">
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="Boolean" Name="IsShowSearch" Nullable="true" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsShowEasySearch" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_Product_Select_Result">
+    <Property Type="String" Name="Image_Url" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="ImageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProductGroup_Title" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProductDescription" Nullable="true" MaxLength="2000" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="String" Name="BarCode" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="PriceSales" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="DiscountPrice" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Int32" Name="AvailableCount" Nullable="true" />
+    <Property Type="Int32" Name="SalesCount" Nullable="true" />
+    <Property Type="Int32" Name="OffPercent" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourrencyName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Sort" Nullable="true" />
+    <Property Type="Int32" Name="Grad" Nullable="true" />
+    <Property Type="String" Name="SumerySpecification" Nullable="true" MaxLength="400" />
+    <Property Type="Boolean" Name="IsOffPercent" Nullable="true" />
+    <Property Type="Int32" Name="VisitedCount" Nullable="true" />
+    <Property Type="Boolean" Name="IsSpecialSales" Nullable="true" />
+    <Property Type="String" Name="DefaultImageVideo" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="InstagramTag" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductSameSearch_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_Product_Select_Torob_Result">
+    <Property Type="String" Name="Image_Url" Nullable="true" MaxLength="301" />
+    <Property Type="String" Name="ProductGroup_Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="Decimal" Name="PriceSales" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="DiscountPrice" Nullable="false" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Int32" Name="AvailableCount" Nullable="true" />
+    <Property Type="Int32" Name="SalesCount" Nullable="true" />
+    <Property Type="Int32" Name="OffPercent" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourrencyName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Sort" Nullable="false" />
+    <Property Type="Int32" Name="Grad" Nullable="true" />
+    <Property Type="String" Name="SumerySpecification" Nullable="true" MaxLength="400" />
+    <Property Type="Boolean" Name="IsOffPercent" Nullable="true" />
+    <Property Type="Boolean" Name="IsSpecialSales" Nullable="true" />
+    <Property Type="String" Name="DefaultImageVideo" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="InstagramTag" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="BarCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PageUrl" Nullable="true" MaxLength="211" />
+  </ComplexType>
+  <ComplexType Name="sp_ProductGroupDetail_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="String" Name="Grouptype" Nullable="false" MaxLength="13" />
+    <Property Type="Boolean" Name="IsShowSearch" Nullable="true" />
+    <Property Type="Boolean" Name="IsShowEasySearch" Nullable="true" />
+    <Property Type="String" Name="GroupTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="GroupTypeName_En" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Sort" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="CompanyTransportation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="TransportationCalculate_BasicData" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Factor" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TransportationPrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IsFree" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="LogUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="sp_CompanyTransportation_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="Int32" Name="TransportationCalculate_BasicData" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Factor" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="TransportationPrice" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="IsFree" Nullable="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TransportationCalculateTitle" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_Product_Panel_Select_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="true" />
+    <Property Type="Int32" Name="CompanyID" Nullable="true" />
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="Int32" Name="TransportationID" Nullable="true" />
+    <Property Type="Decimal" Name="PriceBuy" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="OffPercent" Nullable="true" />
+    <Property Type="Decimal" Name="PriceSales" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Currency" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Positive" Nullable="true" />
+    <Property Type="Int32" Name="Negative" Nullable="true" />
+    <Property Type="DateTime" Name="CreaeDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LogUser" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="Acive" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Int32" Name="AvailableCount" Nullable="true" />
+    <Property Type="Int32" Name="SalesCount" Nullable="true" />
+    <Property Type="Boolean" Name="IsSpecialSales" Nullable="true" />
+    <Property Type="DateTime" Name="FromDateSpecialSales_Mila" Nullable="true" />
+    <Property Type="String" Name="FromDateSpecialSales" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="ToDateSpecialSales_Mila" Nullable="true" />
+    <Property Type="String" Name="ToDateSpecialSales" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="BarCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ImageUrl" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SumerySpecification" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="ProductDescription" Nullable="true" MaxLength="2000" />
+    <Property Type="Boolean" Name="IsViewInstagram" Nullable="true" />
+    <Property Type="Boolean" Name="IsViewTelegram" Nullable="true" />
+    <Property Type="Boolean" Name="IsSendInstagram" Nullable="true" />
+    <Property Type="Boolean" Name="IsSendTelegram" Nullable="true" />
+    <Property Type="String" Name="TelegramError" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="InstagramError" Nullable="true" MaxLength="400" />
+    <Property Type="String" Name="InstagramTag" Nullable="true" MaxLength="400" />
+    <Property Type="Boolean" Name="IsOffPercent" Nullable="true" />
+    <Property Type="Int32" Name="VisitedCount" Nullable="true" />
+    <Property Type="Int32" Name="DiscountPrice" Nullable="true" />
+    <Property Type="String" Name="CompanyTransportationTitle" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_Product_Select_Elmaz_Result">
+    <Property Type="String" Name="Image_Url" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="ProductGroup_Title" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ProductGroupID" Nullable="true" />
+    <Property Type="Int64" Name="PriceSales" Nullable="true" />
+    <Property Type="Int64" Name="DiscountPrice" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="Int32" Name="OffPercent" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CurrencyCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CourrencyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SumerySpecification" Nullable="true" MaxLength="400" />
+    <Property Type="Boolean" Name="IsOffPercent" Nullable="true" />
+    <Property Type="String" Name="PageUrl" Nullable="true" MaxLength="203" />
+  </ComplexType>
+</Schema>

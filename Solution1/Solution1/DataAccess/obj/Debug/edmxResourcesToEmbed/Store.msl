@@ -1,0 +1,1121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreModelStoreContainer" CdmEntityContainer="StoreEntities">
+    <EntitySetMapping Name="CompanyNameDetails">
+      <EntityTypeMapping TypeName="StoreModel.CompanyNameDetail">
+        <MappingFragment StoreEntitySet="CompanyNameDetail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="StoreModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CourrencyName" ColumnName="CourrencyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="StoreModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="StoreModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="UpdateDateAvailableCount" ColumnName="UpdateDateAvailableCount" />
+          <ScalarProperty Name="TransportationID" ColumnName="TransportationID" />
+          <ScalarProperty Name="VisitedCount" ColumnName="VisitedCount" />
+          <ScalarProperty Name="IsOffPercent" ColumnName="IsOffPercent" />
+          <ScalarProperty Name="IstagramTimeSend" ColumnName="IstagramTimeSend" />
+          <ScalarProperty Name="TelegramTimeSend" ColumnName="TelegramTimeSend" />
+          <ScalarProperty Name="InstagramTag" ColumnName="InstagramTag" />
+          <ScalarProperty Name="InstagramError" ColumnName="InstagramError" />
+          <ScalarProperty Name="TelegramError" ColumnName="TelegramError" />
+          <ScalarProperty Name="IsSendTelegram" ColumnName="IsSendTelegram" />
+          <ScalarProperty Name="IsSendInstagram" ColumnName="IsSendInstagram" />
+          <ScalarProperty Name="IsViewTelegram" ColumnName="IsViewTelegram" />
+          <ScalarProperty Name="IsViewInstagram" ColumnName="IsViewInstagram" />
+          <ScalarProperty Name="SumerySpecification" ColumnName="SumerySpecification" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+          <ScalarProperty Name="OffPercent" ColumnName="OffPercent" />
+          <ScalarProperty Name="PriceSales" ColumnName="PriceSales" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Positive" ColumnName="Positive" />
+          <ScalarProperty Name="Negative" ColumnName="Negative" />
+          <ScalarProperty Name="CreaeDate" ColumnName="CreaeDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Acive" ColumnName="Acive" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="AvailableCount" ColumnName="AvailableCount" />
+          <ScalarProperty Name="SalesCount" ColumnName="SalesCount" />
+          <ScalarProperty Name="IsSpecialSales" ColumnName="IsSpecialSales" />
+          <ScalarProperty Name="FromDateSpecialSales_Mila" ColumnName="FromDateSpecialSales_Mila" />
+          <ScalarProperty Name="FromDateSpecialSales" ColumnName="FromDateSpecialSales" />
+          <ScalarProperty Name="ToDateSpecialSales_Mila" ColumnName="ToDateSpecialSales_Mila" />
+          <ScalarProperty Name="ToDateSpecialSales" ColumnName="ToDateSpecialSales" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDescriptions">
+      <EntityTypeMapping TypeName="StoreModel.ProductDescription">
+        <MappingFragment StoreEntitySet="ProductDescription">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="ParentLangID" ColumnName="ParentLangID" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="StoreModel.ProductImage">
+        <MappingFragment StoreEntitySet="ProductImage">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="StoreModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="TransportationAmount" ColumnName="TransportationAmount" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Description_Admin" ColumnName="Description_Admin" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+          <ScalarProperty Name="TotalDiscount" ColumnName="TotalDiscount" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DateShamsi" ColumnName="DateShamsi" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMenus">
+      <EntityTypeMapping TypeName="StoreModel.UserMenu">
+        <MappingFragment StoreEntitySet="UserMenu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="StoreModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LastDateVisit" ColumnName="LastDateVisit" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="FullName_En" ColumnName="FullName_En" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="StoreModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParentLangID" ColumnName="ParentLangID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSubMenus">
+      <EntityTypeMapping TypeName="StoreModel.UserSubMenu">
+        <MappingFragment StoreEntitySet="UserSubMenu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyIDMenu" ColumnName="CompanyIDMenu" />
+          <ScalarProperty Name="TitleMenu" ColumnName="TitleMenu" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+          <ScalarProperty Name="SelectorID" ColumnName="SelectorID" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="SortMenu" ColumnName="SortMenu" />
+          <ScalarProperty Name="IsShowMenu" ColumnName="IsShowMenu" />
+          <ScalarProperty Name="ActiveMenu" ColumnName="ActiveMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_BaseData_GroupSelect" FunctionName="StoreModel.Store.sp_BaseData_GroupSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_BaseData_GroupSelect_Result">
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductImage_Select" FunctionName="StoreModel.Store.sp_ProductImage_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductImage_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SystemParameterProcudure" FunctionName="StoreModel.Store.sp_SystemParameterProcudure">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_SystemParameterProcudure_Result">
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="types_name" ColumnName="types_name" />
+          <ScalarProperty Name="parameters_name" ColumnName="parameters_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SystemTableCOLUMN" FunctionName="StoreModel.Store.sp_SystemTableCOLUMN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_SystemTableCOLUMN_Result">
+          <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+          <ScalarProperty Name="IS_NULLABLE" ColumnName="IS_NULLABLE" />
+          <ScalarProperty Name="DATA_TYPE" ColumnName="DATA_TYPE" />
+          <ScalarProperty Name="MAXIMUM" ColumnName="MAXIMUM" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_TableCOLUMN" FunctionName="StoreModel.Store.sp_TableCOLUMN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_TableCOLUMN_Result">
+          <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+          <ScalarProperty Name="IS_NULLABLE" ColumnName="IS_NULLABLE" />
+          <ScalarProperty Name="DATA_TYPE" ColumnName="DATA_TYPE" />
+          <ScalarProperty Name="MAXIMUM" ColumnName="MAXIMUM" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserProfile_Select" FunctionName="StoreModel.Store.sp_UserProfile_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserProfile_Select_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LastDateVisit" ColumnName="LastDateVisit" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserRole_Select" FunctionName="StoreModel.Store.sp_UserRole_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserRole_Select_Result">
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="ParentLangID" ColumnName="ParentLangID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserSubMenu_Select" FunctionName="StoreModel.Store.sp_UserSubMenu_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserSubMenu_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TitleMenu" ColumnName="TitleMenu" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="SortMenu" ColumnName="SortMenu" />
+          <ScalarProperty Name="IsShowMenu" ColumnName="IsShowMenu" />
+          <ScalarProperty Name="ActiveMenu" ColumnName="ActiveMenu" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+          <ScalarProperty Name="CompanyIDMenu" ColumnName="CompanyIDMenu" />
+          <ScalarProperty Name="SelectorID" ColumnName="SelectorID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BasicDatas">
+      <EntityTypeMapping TypeName="StoreModel.BasicData">
+        <MappingFragment StoreEntitySet="BasicData">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CodeChar" ColumnName="CodeChar" />
+          <ScalarProperty Name="CodeINT" ColumnName="CodeINT" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="Title_EN" ColumnName="Title_EN" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_BasicDate_Select" FunctionName="StoreModel.Store.sp_BasicDate_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_BasicDate_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="CodeINT" ColumnName="CodeINT" />
+          <ScalarProperty Name="CodeChar" ColumnName="CodeChar" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_BaseData_Select" FunctionName="StoreModel.Store.sp_BaseData_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_BaseData_Select_Result">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CodeChar" ColumnName="CodeChar" />
+          <ScalarProperty Name="CodeINT" ColumnName="CodeINT" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="GroupTypeName_Fa" ColumnName="GroupTypeName_Fa" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProductGroupDetails">
+      <EntityTypeMapping TypeName="StoreModel.ProductGroupDetail">
+        <MappingFragment StoreEntitySet="ProductGroupDetail">
+          <ScalarProperty Name="IsShowEasySearch" ColumnName="IsShowEasySearch" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="IsShowSearch" ColumnName="IsShowSearch" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductGroupDetail_GroupBy_Select" FunctionName="StoreModel.Store.sp_ProductGroupDetail_GroupBy_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductGroupDetail_GroupBy_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProductGroups">
+      <EntityTypeMapping TypeName="StoreModel.ProductGroup">
+        <MappingFragment StoreEntitySet="ProductGroup">
+          <ScalarProperty Name="IsLastChid" ColumnName="IsLastChid" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Title_En" ColumnName="Title_En" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseDetails">
+      <EntityTypeMapping TypeName="StoreModel.PurchaseDetail">
+        <MappingFragment StoreEntitySet="PurchaseDetails">
+          <ScalarProperty Name="TotalUnitDisount" ColumnName="TotalUnitDisount" />
+          <ScalarProperty Name="UnitDiscount" ColumnName="UnitDiscount" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="AvalaibleCount" ColumnName="AvalaibleCount" />
+          <ScalarProperty Name="ProducName" ColumnName="ProducName" />
+          <ScalarProperty Name="ShoppingCount" ColumnName="ShoppingCount" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductGroup_Select" FunctionName="StoreModel.Store.sp_ProductGroup_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductGroup_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title_En" ColumnName="Title_En" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="parent_Title" ColumnName="parent_Title" />
+          <ScalarProperty Name="IsLastChid" ColumnName="IsLastChid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CompanyProductGroups">
+      <EntityTypeMapping TypeName="StoreModel.CompanyProductGroup">
+        <MappingFragment StoreEntitySet="CompanyProductGroup">
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_CompanyProductGroup_Select" FunctionName="StoreModel.Store.sp_CompanyProductGroup_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_CompanyProductGroup_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title_En" ColumnName="Title_En" />
+          <ScalarProperty Name="CountProduct" ColumnName="CountProduct" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProductGroup_SelectRecursives" FunctionName="StoreModel.Store.ProductGroup_SelectRecursives">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.ProductGroup_SelectRecursives_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Title_En" ColumnName="Title_En" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="IsLastChid" ColumnName="IsLastChid" />
+          <ScalarProperty Name="ID_Path" ColumnName="ID_Path" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_CompanySettings_Select" FunctionName="StoreModel.Store.sp_CompanySettings_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_CompanySettings_Select_Result">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="SettinCaption" ColumnName="SettinCaption" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PageGenerators">
+      <EntityTypeMapping TypeName="StoreModel.PageGenerator">
+        <MappingFragment StoreEntitySet="PageGenerator">
+          <ScalarProperty Name="PageSystemCode" ColumnName="PageSystemCode" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+          <ScalarProperty Name="PageLocation" ColumnName="PageLocation" />
+          <ScalarProperty Name="PageLocationID" ColumnName="PageLocationID" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="StoreModel.Setting">
+        <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="SettingKey" ColumnName="SettingKey" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserMenu_Select" FunctionName="StoreModel.Store.sp_UserMenu_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserMenu_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_VisitedHistory_GroupBy_Select" FunctionName="StoreModel.Store.sp_VisitedHistory_GroupBy_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_VisitedHistory_GroupBy_Select_Result">
+          <ScalarProperty Name="CountVisited" ColumnName="CountVisited" />
+          <ScalarProperty Name="Date_Shamsi" ColumnName="Date_Shamsi" />
+          <ScalarProperty Name="Date_Miladi" ColumnName="Date_Miladi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CompanySettings">
+      <EntityTypeMapping TypeName="StoreModel.CompanySetting">
+        <MappingFragment StoreEntitySet="CompanySettings">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="SettinCaption" ColumnName="SettinCaption" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductUserComments">
+      <EntityTypeMapping TypeName="StoreModel.ProductUserComment">
+        <MappingFragment StoreEntitySet="ProductUserComment">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="LogIP" ColumnName="LogIP" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_PageGenerator_Select" FunctionName="StoreModel.Store.sp_PageGenerator_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_PageGenerator_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+          <ScalarProperty Name="PageLocationID" ColumnName="PageLocationID" />
+          <ScalarProperty Name="PageLocation" ColumnName="PageLocation" />
+          <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="MenuTitle" ColumnName="MenuTitle" />
+          <ScalarProperty Name="PageSystemCode" ColumnName="PageSystemCode" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PageMenus">
+      <EntityTypeMapping TypeName="StoreModel.PageMenu">
+        <MappingFragment StoreEntitySet="PageMenu">
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="SystemCode" ColumnName="SystemCode" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="MenuTitle" ColumnName="MenuTitle" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_PageMenu_Select" FunctionName="StoreModel.Store.sp_PageMenu_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_PageMenu_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="MenuTitle" ColumnName="MenuTitle" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SystemCode" ColumnName="SystemCode" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductUserComment_Select" FunctionName="StoreModel.Store.sp_ProductUserComment_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductUserComment_Select_Result">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LogIP" ColumnName="LogIP" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="Date_Shamsi" ColumnName="Date_Shamsi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserProfile_Login" FunctionName="StoreModel.Store.sp_UserProfile_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserProfile_Login_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductSpecification_Select" FunctionName="StoreModel.Store.sp_ProductSpecification_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductSpecification_Select_Result">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="GroupTypeName_Fa" ColumnName="GroupTypeName_Fa" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ProductDetails">
+      <EntityTypeMapping TypeName="StoreModel.ProductDetail">
+        <MappingFragment StoreEntitySet="ProductDetail">
+          <ScalarProperty Name="ProductSpecificationID" ColumnName="ProductSpecificationID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSpecifications">
+      <EntityTypeMapping TypeName="StoreModel.ProductSpecification">
+        <MappingFragment StoreEntitySet="ProductSpecification">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductDetail_Specification_Select" FunctionName="StoreModel.Store.sp_ProductDetail_Specification_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductDetail_Specification_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductSpecificationID" ColumnName="ProductSpecificationID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="UserAccesses">
+      <EntityTypeMapping TypeName="StoreModel.UserAccess">
+        <MappingFragment StoreEntitySet="UserAccess">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="SelectorID" ColumnName="SelectorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserAcessMenu_Select" FunctionName="StoreModel.Store.sp_UserAcessMenu_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserAcessMenu_Select_Result">
+          <ScalarProperty Name="TitleMenu" ColumnName="TitleMenu" />
+          <ScalarProperty Name="ControlID" ColumnName="ControlID" />
+          <ScalarProperty Name="SelectorID" ColumnName="SelectorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UserNotAcessMenu_Select" FunctionName="StoreModel.Store.sp_UserNotAcessMenu_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_UserNotAcessMenu_Select_Result">
+          <ScalarProperty Name="TitleMenu" ColumnName="TitleMenu" />
+          <ScalarProperty Name="SelectorID" ColumnName="SelectorID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="StoreModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="SocialNetworks2_Url" ColumnName="SocialNetworks2_Url" />
+          <ScalarProperty Name="SocialNetworks1_Url" ColumnName="SocialNetworks1_Url" />
+          <ScalarProperty Name="SocialNetworks2_LogUrl" ColumnName="SocialNetworks2_LogUrl" />
+          <ScalarProperty Name="SocialNetworks1_LogUrl" ColumnName="SocialNetworks1_LogUrl" />
+          <ScalarProperty Name="VideoDefault_ImageUrl" ColumnName="VideoDefault_ImageUrl" />
+          <ScalarProperty Name="LicenseTag2" ColumnName="LicenseTag2" />
+          <ScalarProperty Name="LicenseTag1" ColumnName="LicenseTag1" />
+          <ScalarProperty Name="NamadTag" ColumnName="NamadTag" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="isParent" ColumnName="isParent" />
+          <ScalarProperty Name="VisitedCount" ColumnName="VisitedCount" />
+          <ScalarProperty Name="PriceFontColor" ColumnName="PriceFontColor" />
+          <ScalarProperty Name="PriceColor" ColumnName="PriceColor" />
+          <ScalarProperty Name="ButtonFontColor" ColumnName="ButtonFontColor" />
+          <ScalarProperty Name="HeaderFontColor" ColumnName="HeaderFontColor" />
+          <ScalarProperty Name="ButtonColor" ColumnName="ButtonColor" />
+          <ScalarProperty Name="HeaderColor" ColumnName="HeaderColor" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+          <ScalarProperty Name="CompanyGroupID_BaseData" ColumnName="CompanyGroupID_BaseData" />
+          <ScalarProperty Name="CityID_BasicData" ColumnName="CityID_BasicData" />
+          <ScalarProperty Name="CountryID_BasicData" ColumnName="CountryID_BasicData" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="BackgroudUrl" ColumnName="BackgroudUrl" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="InstagramPassword" ColumnName="InstagramPassword" />
+          <ScalarProperty Name="InstagramUserName" ColumnName="InstagramUserName" />
+          <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+          <ScalarProperty Name="TelegramUserName" ColumnName="TelegramUserName" />
+          <ScalarProperty Name="TelegramUserChatID" ColumnName="TelegramUserChatID" />
+          <ScalarProperty Name="TelegramChatID" ColumnName="TelegramChatID" />
+          <ScalarProperty Name="TelegramChanalName" ColumnName="TelegramChanalName" />
+          <ScalarProperty Name="TelegramBotToken" ColumnName="TelegramBotToken" />
+          <ScalarProperty Name="TelegramUrl" ColumnName="TelegramUrl" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SMSNumber" ColumnName="SMSNumber" />
+          <ScalarProperty Name="WatsUpNumber" ColumnName="WatsUpNumber" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Company_Select" FunctionName="StoreModel.Store.sp_Company_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Company_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CountryTitle" ColumnName="CountryTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TelegramChanalName" ColumnName="TelegramChanalName" />
+          <ScalarProperty Name="TelegramChatID" ColumnName="TelegramChatID" />
+          <ScalarProperty Name="TelegramUserChatID" ColumnName="TelegramUserChatID" />
+          <ScalarProperty Name="TelegramUserName" ColumnName="TelegramUserName" />
+          <ScalarProperty Name="InstagramUserName" ColumnName="InstagramUserName" />
+          <ScalarProperty Name="InstagramPassword" ColumnName="InstagramPassword" />
+          <ScalarProperty Name="Tell" ColumnName="Tell" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="WatsUpNumber" ColumnName="WatsUpNumber" />
+          <ScalarProperty Name="SMSNumber" ColumnName="SMSNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="TelegramUrl" ColumnName="TelegramUrl" />
+          <ScalarProperty Name="InstagramUrl" ColumnName="InstagramUrl" />
+          <ScalarProperty Name="TelegramBotToken" ColumnName="TelegramBotToken" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="BackgroundUrl" ColumnName="BackgroundUrl" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="ContractName" ColumnName="ContractName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CityID_BasicData" ColumnName="CityID_BasicData" />
+          <ScalarProperty Name="CountryID_BasicData" ColumnName="CountryID_BasicData" />
+          <ScalarProperty Name="CompanyGroup_Title" ColumnName="CompanyGroup_Title" />
+          <ScalarProperty Name="CompanyGroupID_BaseData" ColumnName="CompanyGroupID_BaseData" />
+          <ScalarProperty Name="HeaderColor" ColumnName="HeaderColor" />
+          <ScalarProperty Name="ButtonColor" ColumnName="ButtonColor" />
+          <ScalarProperty Name="HeaderFontColor" ColumnName="HeaderFontColor" />
+          <ScalarProperty Name="ButtonFontColor" ColumnName="ButtonFontColor" />
+          <ScalarProperty Name="PriceColor" ColumnName="PriceColor" />
+          <ScalarProperty Name="PriceFontColor" ColumnName="PriceFontColor" />
+          <ScalarProperty Name="NamadTag" ColumnName="NamadTag" />
+          <ScalarProperty Name="LicenseTag1" ColumnName="LicenseTag1" />
+          <ScalarProperty Name="LicenseTag2" ColumnName="LicenseTag2" />
+          <ScalarProperty Name="VideoDefault_ImageUrl" ColumnName="VideoDefault_ImageUrl" />
+          <ScalarProperty Name="SocialNetworks1_LogUrl" ColumnName="SocialNetworks1_LogUrl" />
+          <ScalarProperty Name="SocialNetworks2_LogUrl" ColumnName="SocialNetworks2_LogUrl" />
+          <ScalarProperty Name="SocialNetworks1_Url" ColumnName="SocialNetworks1_Url" />
+          <ScalarProperty Name="SocialNetworks2_Url" ColumnName="SocialNetworks2_Url" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Payment_Select" FunctionName="StoreModel.Store.sp_Payment_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Payment_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateDate_Shamsi" ColumnName="CreateDate_Shamsi" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="BankRefrence" ColumnName="BankRefrence" />
+          <ScalarProperty Name="PaymentStatusTitle" ColumnName="PaymentStatusTitle" />
+          <ScalarProperty Name="PaymentTypeTilte" ColumnName="PaymentTypeTilte" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="StoreModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="BankRefrence" ColumnName="BankRefrence" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate_Shamsi" ColumnName="CreateDate_Shamsi" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Customer_Select" FunctionName="StoreModel.Store.sp_Customer_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Customer_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BankAcounts">
+      <EntityTypeMapping TypeName="StoreModel.BankAcount">
+        <MappingFragment StoreEntitySet="BankAcount">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ReturnURL" ColumnName="ReturnURL" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Terminal" ColumnName="Terminal" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Purchase_Select" FunctionName="StoreModel.Store.sp_Purchase_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Purchase_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateShamsi" ColumnName="DateShamsi" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CodeMelli" ColumnName="CodeMelli" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ShoppingCount" ColumnName="ShoppingCount" />
+          <ScalarProperty Name="ProducName" ColumnName="ProducName" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="AvalaibleCount" ColumnName="AvalaibleCount" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+          <ScalarProperty Name="TotalDiscount" ColumnName="TotalDiscount" />
+          <ScalarProperty Name="UnitDiscount" ColumnName="UnitDiscount" />
+          <ScalarProperty Name="TotalUnitDisount" ColumnName="TotalUnitDisount" />
+          <ScalarProperty Name="BankRefrence" ColumnName="BankRefrence" />
+          <ScalarProperty Name="PaymentStatusTitle" ColumnName="PaymentStatusTitle" />
+          <ScalarProperty Name="PaymentTypeTilte" ColumnName="PaymentTypeTilte" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductDatail_Select" FunctionName="StoreModel.Store.sp_ProductDatail_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductDatail_Select_Result">
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="IsShowSearch" ColumnName="IsShowSearch" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="IsShowEasySearch" ColumnName="IsShowEasySearch" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Product_Select" FunctionName="StoreModel.Store.sp_Product_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Product_Select_Result">
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ProductGroup_Title" ColumnName="ProductGroup_Title" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="PriceSales" ColumnName="PriceSales" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="AvailableCount" ColumnName="AvailableCount" />
+          <ScalarProperty Name="SalesCount" ColumnName="SalesCount" />
+          <ScalarProperty Name="OffPercent" ColumnName="OffPercent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CourrencyName" ColumnName="CourrencyName" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="SumerySpecification" ColumnName="SumerySpecification" />
+          <ScalarProperty Name="IsOffPercent" ColumnName="IsOffPercent" />
+          <ScalarProperty Name="VisitedCount" ColumnName="VisitedCount" />
+          <ScalarProperty Name="IsSpecialSales" ColumnName="IsSpecialSales" />
+          <ScalarProperty Name="DefaultImageVideo" ColumnName="DefaultImageVideo" />
+          <ScalarProperty Name="InstagramTag" ColumnName="InstagramTag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductSameSearch" FunctionName="StoreModel.Store.sp_ProductSameSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductSameSearch_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Product_Select_Torob" FunctionName="StoreModel.Store.sp_Product_Select_Torob">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Product_Select_Torob_Result">
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="ProductGroup_Title" ColumnName="ProductGroup_Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="PriceSales" ColumnName="PriceSales" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="AvailableCount" ColumnName="AvailableCount" />
+          <ScalarProperty Name="SalesCount" ColumnName="SalesCount" />
+          <ScalarProperty Name="OffPercent" ColumnName="OffPercent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CourrencyName" ColumnName="CourrencyName" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="SumerySpecification" ColumnName="SumerySpecification" />
+          <ScalarProperty Name="IsOffPercent" ColumnName="IsOffPercent" />
+          <ScalarProperty Name="IsSpecialSales" ColumnName="IsSpecialSales" />
+          <ScalarProperty Name="DefaultImageVideo" ColumnName="DefaultImageVideo" />
+          <ScalarProperty Name="InstagramTag" ColumnName="InstagramTag" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ProductGroupDetail_Select" FunctionName="StoreModel.Store.sp_ProductGroupDetail_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_ProductGroupDetail_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="Grouptype" ColumnName="Grouptype" />
+          <ScalarProperty Name="IsShowSearch" ColumnName="IsShowSearch" />
+          <ScalarProperty Name="IsShowEasySearch" ColumnName="IsShowEasySearch" />
+          <ScalarProperty Name="GroupTypeName" ColumnName="GroupTypeName" />
+          <ScalarProperty Name="GroupTypeName_En" ColumnName="GroupTypeName_En" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CompanyTransportations">
+      <EntityTypeMapping TypeName="StoreModel.CompanyTransportation">
+        <MappingFragment StoreEntitySet="CompanyTransportation">
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsFree" ColumnName="IsFree" />
+          <ScalarProperty Name="TransportationPrice" ColumnName="TransportationPrice" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TransportationCalculate_BasicData" ColumnName="TransportationCalculate_BasicData" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_CompanyTransportation_Select" FunctionName="StoreModel.Store.sp_CompanyTransportation_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_CompanyTransportation_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="TransportationCalculate_BasicData" ColumnName="TransportationCalculate_BasicData" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="TransportationPrice" ColumnName="TransportationPrice" />
+          <ScalarProperty Name="IsFree" ColumnName="IsFree" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="TransportationCalculateTitle" ColumnName="TransportationCalculateTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Product_Panel_Select" FunctionName="StoreModel.Store.sp_Product_Panel_Select">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Product_Panel_Select_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="TransportationID" ColumnName="TransportationID" />
+          <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+          <ScalarProperty Name="OffPercent" ColumnName="OffPercent" />
+          <ScalarProperty Name="PriceSales" ColumnName="PriceSales" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Positive" ColumnName="Positive" />
+          <ScalarProperty Name="Negative" ColumnName="Negative" />
+          <ScalarProperty Name="CreaeDate" ColumnName="CreaeDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="LogUser" ColumnName="LogUser" />
+          <ScalarProperty Name="Acive" ColumnName="Acive" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="AvailableCount" ColumnName="AvailableCount" />
+          <ScalarProperty Name="SalesCount" ColumnName="SalesCount" />
+          <ScalarProperty Name="IsSpecialSales" ColumnName="IsSpecialSales" />
+          <ScalarProperty Name="FromDateSpecialSales_Mila" ColumnName="FromDateSpecialSales_Mila" />
+          <ScalarProperty Name="FromDateSpecialSales" ColumnName="FromDateSpecialSales" />
+          <ScalarProperty Name="ToDateSpecialSales_Mila" ColumnName="ToDateSpecialSales_Mila" />
+          <ScalarProperty Name="ToDateSpecialSales" ColumnName="ToDateSpecialSales" />
+          <ScalarProperty Name="BarCode" ColumnName="BarCode" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SumerySpecification" ColumnName="SumerySpecification" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="IsViewInstagram" ColumnName="IsViewInstagram" />
+          <ScalarProperty Name="IsViewTelegram" ColumnName="IsViewTelegram" />
+          <ScalarProperty Name="IsSendInstagram" ColumnName="IsSendInstagram" />
+          <ScalarProperty Name="IsSendTelegram" ColumnName="IsSendTelegram" />
+          <ScalarProperty Name="TelegramError" ColumnName="TelegramError" />
+          <ScalarProperty Name="InstagramError" ColumnName="InstagramError" />
+          <ScalarProperty Name="InstagramTag" ColumnName="InstagramTag" />
+          <ScalarProperty Name="IsOffPercent" ColumnName="IsOffPercent" />
+          <ScalarProperty Name="VisitedCount" ColumnName="VisitedCount" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="CompanyTransportationTitle" ColumnName="CompanyTransportationTitle" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Product_Select_Elmaz" FunctionName="StoreModel.Store.sp_Product_Select_Elmaz">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StoreModel.sp_Product_Select_Elmaz_Result">
+          <ScalarProperty Name="Image_Url" ColumnName="Image_Url" />
+          <ScalarProperty Name="ProductGroup_Title" ColumnName="ProductGroup_Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+          <ScalarProperty Name="PriceSales" ColumnName="PriceSales" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="OffPercent" ColumnName="OffPercent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="CourrencyName" ColumnName="CourrencyName" />
+          <ScalarProperty Name="SumerySpecification" ColumnName="SumerySpecification" />
+          <ScalarProperty Name="IsOffPercent" ColumnName="IsOffPercent" />
+          <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

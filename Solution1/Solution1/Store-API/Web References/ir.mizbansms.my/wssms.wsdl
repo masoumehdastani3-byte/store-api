@@ -1,0 +1,4218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/webservices/AbstractTypes" xmlns:tns="http://microsoft.com/webservices/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;وب سرويس خدمات پيام کوتاه.&lt;/b&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="UserCharge">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserChargeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserChargeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOtpResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyOtp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyOtpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyOtpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordForget">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileuser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailuser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordForgetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordForgetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeSMSNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeSMSNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeSMSNumberResult" type="tns:ArrayOfQuerySMSNumber" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQuerySMSNumber">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuerySMSNumber" type="tns:QuerySMSNumber" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuerySMSNumber">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enable" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRegistePackageList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistePackageListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegistePackageListResult" type="tns:ArrayOfPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Package" type="tns:Package" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Package">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="registerOnline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="family" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registerOnlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registerOnlineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMessageStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatuses21">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMessageStatuses21Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageStatuses21Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMessageStatuses50004">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatuses50004Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageStatuses50004Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatuses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStatusesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageStatusesResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPreNum">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPreNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreNumResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreNum5000">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPreNum5000Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreNum5000Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFreeNum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFreeNumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFreeNumResult" type="tns:ArrayOfQueryNum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQueryNum">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QueryNum" type="tns:QueryNum" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QueryNum">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="open" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="kind" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFreeNum5000">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFreeNum5000Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFreeNum5000Result" type="tns:ArrayOfQueryNum5000" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQueryNum5000">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QueryNum5000" type="tns:QueryNum5000" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QueryNum5000">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="open" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="kind" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GePackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GePackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GePackageResult" type="tns:ArrayOfQueryPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfQueryPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QueryPackage" type="tns:QueryPackage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QueryPackage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Price" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MinSale" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tariff" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendsmsSimCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsSimCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsSimCardResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsms2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsms2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsms2Result" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delsendsmsfuture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelsendsmsfutureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelsendsmsfutureResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfuture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="min" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfutureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsfutureResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfuture2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="min" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfuture2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsfuture2Result" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfuture3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="min" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsfuture3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsfuture3Result" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NazirSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tobank" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="day" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="min" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NazirSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NazirSendResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="smscounter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="smscounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smscounterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="smscounterArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="texts" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="smscounterArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smscounterArrayResult" type="tns:ArrayOfSmsCounterResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSmsCounterResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SmsCounterResult" nillable="true" type="tns:SmsCounterResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SmsCounterResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LanguageMessage" type="tns:LanguageMessage" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CharCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LanguageMessage">
+        <s:restriction base="s:string">
+          <s:enumeration value="Persian" />
+          <s:enumeration value="English" />
+          <s:enumeration value="Image" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Credites">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreditesResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessageArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="countMsg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessageArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessageArrayResult" type="tns:ArrayOfRecMsgUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRecMsgUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RecMsgUser" type="tns:RecMsgUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RecMsgUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBankId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bankId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBankIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bankId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gender" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiverNumberKind" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageStart" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageEnd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiverNumberPrefix" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountSmsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bankId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordEnd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gender" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiverNumberKind" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageStart" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ageEnd" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="receiverNumberPrefix" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordStart" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendBulkSmsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="countMsg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessageResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserExp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserExpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserExpResult" type="tns:ArrayOfExpireUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExpireUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="expireUser" type="tns:expireUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="expireUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="startdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="enddate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserContactResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserContactArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserContactArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserContactArrayResult" type="tns:ArrayOfContactUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfContactUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactUser" type="tns:ContactUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Contactname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactTels" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserNumberArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNumberArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNumberArrayResult" type="tns:ArrayOfSeUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSeUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SeUser" type="tns:SeUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SeUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Number" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Logins2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logins2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Logins2Result" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logins">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="secuity" type="tns:NetworkCredential" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NetworkCredential">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurePassword" type="tns:SecureString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Domain" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SecureString" />
+      <s:element name="LoginsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginsResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetState">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStateResult" type="tns:ArrayOfStates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStates">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="States" type="tns:States" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="States">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCitiesResult" type="tns:ArrayOfCities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cities" type="tns:Cities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllSendSmsArray">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="countMsg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSendSmsArrayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSendSmsArrayResult" type="tns:ArrayOfSendMsgUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSendMsgUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SendMsgUser" type="tns:SendMsgUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SendMsgUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVerAndroid">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetVerAndroidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerAndroidResult" type="tns:ArrayOfVerAndroid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVerAndroid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VerAndroid" type="tns:VerAndroid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VerAndroid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendsmsGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendsmsGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendsmsGuidResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCostSms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="text" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="api" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCostSmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCostSmsResult" type="tns:CostResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CostResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cost" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Language" type="tns:LanguageMessage" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountIrancel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountAval" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountRightel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountTaliya" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="resultCode" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ArrayOfQuerySMSNumber" nillable="true" type="tns:ArrayOfQuerySMSNumber" />
+      <s:element name="ArrayOfPackage" nillable="true" type="tns:ArrayOfPackage" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+      <s:element name="ArrayOfQueryNum" nillable="true" type="tns:ArrayOfQueryNum" />
+      <s:element name="ArrayOfQueryNum5000" nillable="true" type="tns:ArrayOfQueryNum5000" />
+      <s:element name="ArrayOfQueryPackage" nillable="true" type="tns:ArrayOfQueryPackage" />
+      <s:element name="ArrayOfLong" nillable="true" type="tns:ArrayOfLong" />
+      <s:element name="ArrayOfSmsCounterResult" nillable="true" type="tns:ArrayOfSmsCounterResult" />
+      <s:element name="double" type="s:double" />
+      <s:element name="ArrayOfRecMsgUser" nillable="true" type="tns:ArrayOfRecMsgUser" />
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfExpireUser" nillable="true" type="tns:ArrayOfExpireUser" />
+      <s:element name="ArrayOfContactUser" nillable="true" type="tns:ArrayOfContactUser" />
+      <s:element name="ArrayOfSeUser" nillable="true" type="tns:ArrayOfSeUser" />
+      <s:element name="ArrayOfStates" nillable="true" type="tns:ArrayOfStates" />
+      <s:element name="ArrayOfCities" nillable="true" type="tns:ArrayOfCities" />
+      <s:element name="ArrayOfSendMsgUser" nillable="true" type="tns:ArrayOfSendMsgUser" />
+      <s:element name="ArrayOfVerAndroid" nillable="true" type="tns:ArrayOfVerAndroid" />
+      <s:element name="CostResult" type="tns:CostResult" />
+    </s:schema>
+    <s:schema targetNamespace="http://microsoft.com/webservices/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UserChargeSoapIn">
+    <wsdl:part name="parameters" element="tns:UserCharge" />
+  </wsdl:message>
+  <wsdl:message name="UserChargeSoapOut">
+    <wsdl:part name="parameters" element="tns:UserChargeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOtp" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyOtp" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetSoapIn">
+    <wsdl:part name="parameters" element="tns:PasswordForget" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetSoapOut">
+    <wsdl:part name="parameters" element="tns:PasswordForgetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GeSMSNumber" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GeSMSNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegistePackageList" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegistePackageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineSoapIn">
+    <wsdl:part name="parameters" element="tns:registerOnline" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineSoapOut">
+    <wsdl:part name="parameters" element="tns:registerOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageStatuses21" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageStatuses21Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004SoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageStatuses50004" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004SoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageStatuses50004Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageStatuses" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreNum" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNum5000SoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreNum5000" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNum5000SoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreNum5000Response" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFreeNum" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFreeNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000SoapIn">
+    <wsdl:part name="parameters" element="tns:GetFreeNum5000" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000SoapOut">
+    <wsdl:part name="parameters" element="tns:GetFreeNum5000Response" />
+  </wsdl:message>
+  <wsdl:message name="GePackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GePackage" />
+  </wsdl:message>
+  <wsdl:message name="GePackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardSoapIn">
+    <wsdl:part name="parameters" element="tns:sendsmsSimCard" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardSoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsSimCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2SoapIn">
+    <wsdl:part name="parameters" element="tns:sendsms2" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2SoapOut">
+    <wsdl:part name="parameters" element="tns:sendsms2Response" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSoapIn">
+    <wsdl:part name="parameters" element="tns:sendsms" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureSoapIn">
+    <wsdl:part name="parameters" element="tns:Delsendsmsfuture" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureSoapOut">
+    <wsdl:part name="parameters" element="tns:DelsendsmsfutureResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureSoapIn">
+    <wsdl:part name="parameters" element="tns:sendsmsfuture" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureSoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsfutureResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2SoapIn">
+    <wsdl:part name="parameters" element="tns:sendsmsfuture2" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2SoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsfuture2Response" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3SoapIn">
+    <wsdl:part name="parameters" element="tns:sendsmsfuture3" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3SoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsfuture3Response" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendSoapIn">
+    <wsdl:part name="parameters" element="tns:NazirSend" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendSoapOut">
+    <wsdl:part name="parameters" element="tns:NazirSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="smscounterSoapIn">
+    <wsdl:part name="parameters" element="tns:smscounter" />
+  </wsdl:message>
+  <wsdl:message name="smscounterSoapOut">
+    <wsdl:part name="parameters" element="tns:smscounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArraySoapIn">
+    <wsdl:part name="parameters" element="tns:smscounterArray" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArraySoapOut">
+    <wsdl:part name="parameters" element="tns:smscounterArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditesSoapIn">
+    <wsdl:part name="parameters" element="tns:Credites" />
+  </wsdl:message>
+  <wsdl:message name="CreditesSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessageArray" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessageArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBankId" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBankIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountSms" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkSms" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserExp" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserExpResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserContact" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserContactArray" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserContactArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserNumberArray" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNumberArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Logins2SoapIn">
+    <wsdl:part name="parameters" element="tns:Logins2" />
+  </wsdl:message>
+  <wsdl:message name="Logins2SoapOut">
+    <wsdl:part name="parameters" element="tns:Logins2Response" />
+  </wsdl:message>
+  <wsdl:message name="LoginsSoapIn">
+    <wsdl:part name="parameters" element="tns:Logins" />
+  </wsdl:message>
+  <wsdl:message name="LoginsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetState" />
+  </wsdl:message>
+  <wsdl:message name="GetStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArraySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSendSmsArray" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArraySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSendSmsArrayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerAndroidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerAndroid" />
+  </wsdl:message>
+  <wsdl:message name="GetVerAndroidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:sendsmsGuid" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:sendsmsGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCostSms" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCostSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserChargeHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserChargeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpHttpGetIn">
+    <wsdl:part name="mobileNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpHttpGetIn">
+    <wsdl:part name="mobileNumber" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="mobileuser" type="s:string" />
+    <wsdl:part name="emailuser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuerySMSNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPackage" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="packageId" type="s:string" />
+    <wsdl:part name="mobileNumber" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21HttpGetIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004HttpGetIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesHttpGetIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNumHttpGetIn" />
+  <wsdl:message name="GetPreNumHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNum5000HttpGetIn" />
+  <wsdl:message name="GetPreNum5000HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumHttpGetIn">
+    <wsdl:part name="num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryNum" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000HttpGetIn">
+    <wsdl:part name="num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryNum5000" />
+  </wsdl:message>
+  <wsdl:message name="GePackageHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GePackageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryPackage" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2HttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="Guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2HttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3HttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="text" type="s1:StringArray" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="tobank" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="smscounterHttpGetIn">
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="smscounterHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArrayHttpGetIn">
+    <wsdl:part name="texts" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArrayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSmsCounterResult" />
+  </wsdl:message>
+  <wsdl:message name="CreditesHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreditesHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArrayHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArrayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRecMsgUser" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdHttpGetIn">
+    <wsdl:part name="bankId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsHttpGetIn">
+    <wsdl:part name="bankId" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="receiverNumberKind" type="s:string" />
+    <wsdl:part name="ageStart" type="s:string" />
+    <wsdl:part name="ageEnd" type="s:string" />
+    <wsdl:part name="receiverNumberPrefix" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="bankId" type="s:string" />
+    <wsdl:part name="body" type="s:string" />
+    <wsdl:part name="recordEnd" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="receiverNumberKind" type="s:string" />
+    <wsdl:part name="ageStart" type="s:string" />
+    <wsdl:part name="ageEnd" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="receiverNumberPrefix" type="s:string" />
+    <wsdl:part name="recordStart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExpireUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArrayHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArrayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArrayHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArrayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSeUser" />
+  </wsdl:message>
+  <wsdl:message name="Logins2HttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Logins2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetStateHttpGetIn" />
+  <wsdl:message name="GetStateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStates" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesHttpGetIn">
+    <wsdl:part name="parent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCities" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArrayHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArrayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSendMsgUser" />
+  </wsdl:message>
+  <wsdl:message name="GetVerAndroidHttpGetIn" />
+  <wsdl:message name="GetVerAndroidHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfVerAndroid" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="Guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsHttpGetOut">
+    <wsdl:part name="Body" element="tns:CostResult" />
+  </wsdl:message>
+  <wsdl:message name="UserChargeHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="user" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserChargeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpHttpPostIn">
+    <wsdl:part name="mobileNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOtpHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpHttpPostIn">
+    <wsdl:part name="mobileNumber" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOtpHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="mobileuser" type="s:string" />
+    <wsdl:part name="emailuser" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PasswordForgetHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeSMSNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQuerySMSNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistePackageListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPackage" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="packageId" type="s:string" />
+    <wsdl:part name="mobileNumber" type="s:string" />
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="family" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="registerOnlineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21HttpPostIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses21HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004HttpPostIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatuses50004HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesHttpPostIn">
+    <wsdl:part name="id" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStatusesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNumHttpPostIn" />
+  <wsdl:message name="GetPreNumHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPreNum5000HttpPostIn" />
+  <wsdl:message name="GetPreNum5000HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumHttpPostIn">
+    <wsdl:part name="num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNumHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryNum" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000HttpPostIn">
+    <wsdl:part name="num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFreeNum5000HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryNum5000" />
+  </wsdl:message>
+  <wsdl:message name="GePackageHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GePackageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfQueryPackage" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsSimCardHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2HttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsms2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="Guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DelsendsmsfutureHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfutureHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2HttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3HttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="text" type="s1:StringArray" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsfuture3HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="tobank" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="day" type="s:string" />
+    <wsdl:part name="hour" type="s:string" />
+    <wsdl:part name="min" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NazirSendHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="smscounterHttpPostIn">
+    <wsdl:part name="text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="smscounterHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArrayHttpPostIn">
+    <wsdl:part name="texts" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="smscounterArrayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSmsCounterResult" />
+  </wsdl:message>
+  <wsdl:message name="CreditesHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreditesHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArrayHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageArrayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfRecMsgUser" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdHttpPostIn">
+    <wsdl:part name="bankId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBankIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsHttpPostIn">
+    <wsdl:part name="bankId" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="receiverNumberKind" type="s:string" />
+    <wsdl:part name="ageStart" type="s:string" />
+    <wsdl:part name="ageEnd" type="s:string" />
+    <wsdl:part name="receiverNumberPrefix" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountSmsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="bankId" type="s:string" />
+    <wsdl:part name="body" type="s:string" />
+    <wsdl:part name="recordEnd" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="receiverNumberKind" type="s:string" />
+    <wsdl:part name="ageStart" type="s:string" />
+    <wsdl:part name="ageEnd" type="s:string" />
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="receiverNumberPrefix" type="s:string" />
+    <wsdl:part name="recordStart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkSmsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserExpHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExpireUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArrayHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserContactArrayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfContactUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArrayHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNumberArrayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSeUser" />
+  </wsdl:message>
+  <wsdl:message name="Logins2HttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="pass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Logins2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetStateHttpPostIn" />
+  <wsdl:message name="GetStateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfStates" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesHttpPostIn">
+    <wsdl:part name="parent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCitiesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfCities" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArrayHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="countMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSendSmsArrayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSendMsgUser" />
+  </wsdl:message>
+  <wsdl:message name="GetVerAndroidHttpPostIn" />
+  <wsdl:message name="GetVerAndroidHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfVerAndroid" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+    <wsdl:part name="Guid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="sendsmsGuidHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="text" type="s:string" />
+    <wsdl:part name="to" type="s1:StringArray" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="api" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCostSmsHttpPostOut">
+    <wsdl:part name="Body" element="tns:CostResult" />
+  </wsdl:message>
+  <wsdl:portType name="WSSMSSoap">
+    <wsdl:operation name="UserCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شارژ کاربران نماینده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UserChargeSoapIn" />
+      <wsdl:output message="tns:UserChargeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تولید رمز یک بار مصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOtpSoapIn" />
+      <wsdl:output message="tns:GetOtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجی رمز یکبارمصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:VerifyOtpSoapIn" />
+      <wsdl:output message="tns:VerifyOtpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;فراموشی کلمه عبور.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:PasswordForgetSoapIn" />
+      <wsdl:output message="tns:PasswordForgetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصی کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GeSMSNumberSoapIn" />
+      <wsdl:output message="tns:GeSMSNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استعلام پکیج های ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistePackageListSoapIn" />
+      <wsdl:output message="tns:GetRegistePackageListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt; ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:registerOnlineSoapIn" />
+      <wsdl:output message="tns:registerOnlineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد استعلام  وضعيت پيامک.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusSoapIn" />
+      <wsdl:output message="tns:GetMessageStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;021  متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses21SoapIn" />
+      <wsdl:output message="tns:GetMessageStatuses21SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;50004متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses50004SoapIn" />
+      <wsdl:output message="tns:GetMessageStatuses50004SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  وضعيت پيامک ها3000 .&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusesSoapIn" />
+      <wsdl:output message="tns:GetMessageStatusesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNumSoapIn" />
+      <wsdl:output message="tns:GetPreNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;5000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNum5000SoapIn" />
+      <wsdl:output message="tns:GetPreNum5000SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي3000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNumSoapIn" />
+      <wsdl:output message="tns:GetFreeNumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي5000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNum5000SoapIn" />
+      <wsdl:output message="tns:GetFreeNum5000SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  پکيج کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GePackageSoapIn" />
+      <wsdl:output message="tns:GePackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس سیم کارتی.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsSimCardSoapIn" />
+      <wsdl:output message="tns:sendsmsSimCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس بدون پارامتر api.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsms2SoapIn" />
+      <wsdl:output message="tns:sendsms2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsSoapIn" />
+      <wsdl:output message="tns:sendsmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;حذف ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DelsendsmsfutureSoapIn" />
+      <wsdl:output message="tns:DelsendsmsfutureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfutureSoapIn" />
+      <wsdl:output message="tns:sendsmsfutureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده2&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture2SoapIn" />
+      <wsdl:output message="tns:sendsmsfuture2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده3&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture3SoapIn" />
+      <wsdl:output message="tns:sendsmsfuture3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال نظير به نظير&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:NazirSendSoapIn" />
+      <wsdl:output message="tns:NazirSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterSoapIn" />
+      <wsdl:output message="tns:smscounterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterArraySoapIn" />
+      <wsdl:output message="tns:smscounterArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CreditesSoapIn" />
+      <wsdl:output message="tns:CreditesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageArraySoapIn" />
+      <wsdl:output message="tns:GetAllMessageArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد بازگشت بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetBankIdSoapIn" />
+      <wsdl:output message="tns:GetBankIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تعداد شماره موجود در بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCountSmsSoapIn" />
+      <wsdl:output message="tns:GetCountSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ارسال اس ام اس جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendBulkSmsSoapIn" />
+      <wsdl:output message="tns:SendBulkSmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageSoapIn" />
+      <wsdl:output message="tns:GetAllMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تاريخ شروع و پايان پنل کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserExpSoapIn" />
+      <wsdl:output message="tns:GetUserExpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactSoapIn" />
+      <wsdl:output message="tns:GetUserContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactArraySoapIn" />
+      <wsdl:output message="tns:GetUserContactArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شماره اختصاصي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserNumberArraySoapIn" />
+      <wsdl:output message="tns:GetUserNumberArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;2شناسايي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Logins2SoapIn" />
+      <wsdl:output message="tns:Logins2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logins">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شناسايي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:LoginsSoapIn" />
+      <wsdl:output message="tns:LoginsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استان هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStateSoapIn" />
+      <wsdl:output message="tns:GetStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شهر هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesSoapIn" />
+      <wsdl:output message="tns:GetCitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;گزارش ارسال اس ام اس کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllSendSmsArraySoapIn" />
+      <wsdl:output message="tns:GetAllSendSmsArraySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ورژن نرم افزار اندرويد&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetVerAndroidSoapIn" />
+      <wsdl:output message="tns:GetVerAndroidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس با شناسه.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsGuidSoapIn" />
+      <wsdl:output message="tns:sendsmsGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;هزینه پیامک&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCostSmsSoapIn" />
+      <wsdl:output message="tns:GetCostSmsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSSMSHttpGet">
+    <wsdl:operation name="UserCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شارژ کاربران نماینده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UserChargeHttpGetIn" />
+      <wsdl:output message="tns:UserChargeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تولید رمز یک بار مصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOtpHttpGetIn" />
+      <wsdl:output message="tns:GetOtpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجی رمز یکبارمصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:VerifyOtpHttpGetIn" />
+      <wsdl:output message="tns:VerifyOtpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;فراموشی کلمه عبور.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:PasswordForgetHttpGetIn" />
+      <wsdl:output message="tns:PasswordForgetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصی کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GeSMSNumberHttpGetIn" />
+      <wsdl:output message="tns:GeSMSNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استعلام پکیج های ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistePackageListHttpGetIn" />
+      <wsdl:output message="tns:GetRegistePackageListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt; ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:registerOnlineHttpGetIn" />
+      <wsdl:output message="tns:registerOnlineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد استعلام  وضعيت پيامک.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusHttpGetIn" />
+      <wsdl:output message="tns:GetMessageStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;021  متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses21HttpGetIn" />
+      <wsdl:output message="tns:GetMessageStatuses21HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;50004متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses50004HttpGetIn" />
+      <wsdl:output message="tns:GetMessageStatuses50004HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  وضعيت پيامک ها3000 .&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusesHttpGetIn" />
+      <wsdl:output message="tns:GetMessageStatusesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNumHttpGetIn" />
+      <wsdl:output message="tns:GetPreNumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;5000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNum5000HttpGetIn" />
+      <wsdl:output message="tns:GetPreNum5000HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي3000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNumHttpGetIn" />
+      <wsdl:output message="tns:GetFreeNumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي5000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNum5000HttpGetIn" />
+      <wsdl:output message="tns:GetFreeNum5000HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  پکيج کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GePackageHttpGetIn" />
+      <wsdl:output message="tns:GePackageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس سیم کارتی.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsSimCardHttpGetIn" />
+      <wsdl:output message="tns:sendsmsSimCardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس بدون پارامتر api.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsms2HttpGetIn" />
+      <wsdl:output message="tns:sendsms2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsHttpGetIn" />
+      <wsdl:output message="tns:sendsmsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;حذف ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DelsendsmsfutureHttpGetIn" />
+      <wsdl:output message="tns:DelsendsmsfutureHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfutureHttpGetIn" />
+      <wsdl:output message="tns:sendsmsfutureHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده2&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture2HttpGetIn" />
+      <wsdl:output message="tns:sendsmsfuture2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده3&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture3HttpGetIn" />
+      <wsdl:output message="tns:sendsmsfuture3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال نظير به نظير&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:NazirSendHttpGetIn" />
+      <wsdl:output message="tns:NazirSendHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterHttpGetIn" />
+      <wsdl:output message="tns:smscounterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterArrayHttpGetIn" />
+      <wsdl:output message="tns:smscounterArrayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CreditesHttpGetIn" />
+      <wsdl:output message="tns:CreditesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageArrayHttpGetIn" />
+      <wsdl:output message="tns:GetAllMessageArrayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد بازگشت بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetBankIdHttpGetIn" />
+      <wsdl:output message="tns:GetBankIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تعداد شماره موجود در بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCountSmsHttpGetIn" />
+      <wsdl:output message="tns:GetCountSmsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ارسال اس ام اس جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendBulkSmsHttpGetIn" />
+      <wsdl:output message="tns:SendBulkSmsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageHttpGetIn" />
+      <wsdl:output message="tns:GetAllMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تاريخ شروع و پايان پنل کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserExpHttpGetIn" />
+      <wsdl:output message="tns:GetUserExpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactHttpGetIn" />
+      <wsdl:output message="tns:GetUserContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactArrayHttpGetIn" />
+      <wsdl:output message="tns:GetUserContactArrayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شماره اختصاصي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserNumberArrayHttpGetIn" />
+      <wsdl:output message="tns:GetUserNumberArrayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;2شناسايي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Logins2HttpGetIn" />
+      <wsdl:output message="tns:Logins2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استان هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStateHttpGetIn" />
+      <wsdl:output message="tns:GetStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شهر هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesHttpGetIn" />
+      <wsdl:output message="tns:GetCitiesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;گزارش ارسال اس ام اس کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllSendSmsArrayHttpGetIn" />
+      <wsdl:output message="tns:GetAllSendSmsArrayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ورژن نرم افزار اندرويد&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetVerAndroidHttpGetIn" />
+      <wsdl:output message="tns:GetVerAndroidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس با شناسه.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsGuidHttpGetIn" />
+      <wsdl:output message="tns:sendsmsGuidHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;هزینه پیامک&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCostSmsHttpGetIn" />
+      <wsdl:output message="tns:GetCostSmsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSSMSHttpPost">
+    <wsdl:operation name="UserCharge">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شارژ کاربران نماینده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:UserChargeHttpPostIn" />
+      <wsdl:output message="tns:UserChargeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تولید رمز یک بار مصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetOtpHttpPostIn" />
+      <wsdl:output message="tns:GetOtpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجی رمز یکبارمصرف.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:VerifyOtpHttpPostIn" />
+      <wsdl:output message="tns:VerifyOtpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;فراموشی کلمه عبور.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:PasswordForgetHttpPostIn" />
+      <wsdl:output message="tns:PasswordForgetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصی کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GeSMSNumberHttpPostIn" />
+      <wsdl:output message="tns:GeSMSNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استعلام پکیج های ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistePackageListHttpPostIn" />
+      <wsdl:output message="tns:GetRegistePackageListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt; ثبت نام آنلاین.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:registerOnlineHttpPostIn" />
+      <wsdl:output message="tns:registerOnlineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد استعلام  وضعيت پيامک.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusHttpPostIn" />
+      <wsdl:output message="tns:GetMessageStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;021  متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses21HttpPostIn" />
+      <wsdl:output message="tns:GetMessageStatuses21HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;50004متد استعلام  وضعيت پيامک ها.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatuses50004HttpPostIn" />
+      <wsdl:output message="tns:GetMessageStatuses50004HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  وضعيت پيامک ها3000 .&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMessageStatusesHttpPostIn" />
+      <wsdl:output message="tns:GetMessageStatusesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;3000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNumHttpPostIn" />
+      <wsdl:output message="tns:GetPreNumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;5000متد بازگشت پيش شماره اختصاصي.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPreNum5000HttpPostIn" />
+      <wsdl:output message="tns:GetPreNum5000HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي3000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNumHttpPostIn" />
+      <wsdl:output message="tns:GetFreeNumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  شماره اختصاصي5000.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetFreeNum5000HttpPostIn" />
+      <wsdl:output message="tns:GetFreeNum5000HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد استعلام  پکيج کاربران.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GePackageHttpPostIn" />
+      <wsdl:output message="tns:GePackageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس سیم کارتی.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsSimCardHttpPostIn" />
+      <wsdl:output message="tns:sendsmsSimCardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس بدون پارامتر api.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsms2HttpPostIn" />
+      <wsdl:output message="tns:sendsms2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsHttpPostIn" />
+      <wsdl:output message="tns:sendsmsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;حذف ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:DelsendsmsfutureHttpPostIn" />
+      <wsdl:output message="tns:DelsendsmsfutureHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfutureHttpPostIn" />
+      <wsdl:output message="tns:sendsmsfutureHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده2&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture2HttpPostIn" />
+      <wsdl:output message="tns:sendsmsfuture2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس آينده3&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsfuture3HttpPostIn" />
+      <wsdl:output message="tns:sendsmsfuture3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال نظير به نظير&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:NazirSendHttpPostIn" />
+      <wsdl:output message="tns:NazirSendHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterHttpPostIn" />
+      <wsdl:output message="tns:smscounterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شمارنده کاراکترهاي اس ام اس.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:smscounterArrayHttpPostIn" />
+      <wsdl:output message="tns:smscounterArrayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;اعتبارسنجي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:CreditesHttpPostIn" />
+      <wsdl:output message="tns:CreditesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageArrayHttpPostIn" />
+      <wsdl:output message="tns:GetAllMessageArrayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد بازگشت بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetBankIdHttpPostIn" />
+      <wsdl:output message="tns:GetBankIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تعداد شماره موجود در بانک جنسيت.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCountSmsHttpPostIn" />
+      <wsdl:output message="tns:GetCountSmsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ارسال اس ام اس جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SendBulkSmsHttpPostIn" />
+      <wsdl:output message="tns:SendBulkSmsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دريافت پيامک کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllMessageHttpPostIn" />
+      <wsdl:output message="tns:GetAllMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;تاريخ شروع و پايان پنل کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserExpHttpPostIn" />
+      <wsdl:output message="tns:GetUserExpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactHttpPostIn" />
+      <wsdl:output message="tns:GetUserContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;دفترجه تلفن کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserContactArrayHttpPostIn" />
+      <wsdl:output message="tns:GetUserContactArrayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شماره اختصاصي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetUserNumberArrayHttpPostIn" />
+      <wsdl:output message="tns:GetUserNumberArrayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;2شناسايي کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:Logins2HttpPostIn" />
+      <wsdl:output message="tns:Logins2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;استان هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetStateHttpPostIn" />
+      <wsdl:output message="tns:GetStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;شهر هاي ارسال جنسيت&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCitiesHttpPostIn" />
+      <wsdl:output message="tns:GetCitiesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;گزارش ارسال اس ام اس کاربران&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetAllSendSmsArrayHttpPostIn" />
+      <wsdl:output message="tns:GetAllSendSmsArrayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;ورژن نرم افزار اندرويد&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetVerAndroidHttpPostIn" />
+      <wsdl:output message="tns:GetVerAndroidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;متد ارسال اس ام اس با شناسه.&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:sendsmsGuidHttpPostIn" />
+      <wsdl:output message="tns:sendsmsGuidHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;هزینه پیامک&lt;/b&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetCostSmsHttpPostIn" />
+      <wsdl:output message="tns:GetCostSmsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSSMSSoap" type="tns:WSSMSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserCharge">
+      <soap:operation soapAction="http://microsoft.com/webservices/UserCharge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <soap:operation soapAction="http://microsoft.com/webservices/VerifyOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <soap:operation soapAction="http://microsoft.com/webservices/PasswordForget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <soap:operation soapAction="http://microsoft.com/webservices/GeSMSNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetRegistePackageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <soap:operation soapAction="http://microsoft.com/webservices/registerOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetMessageStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses21" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses50004" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetPreNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetPreNum5000" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetFreeNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetFreeNum5000" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <soap:operation soapAction="http://microsoft.com/webservices/GePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsmsSimCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsms2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <soap:operation soapAction="http://microsoft.com/webservices/Delsendsmsfuture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsmsfuture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsmsfuture2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsmsfuture3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <soap:operation soapAction="http://microsoft.com/webservices/NazirSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <soap:operation soapAction="http://microsoft.com/webservices/smscounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <soap:operation soapAction="http://microsoft.com/webservices/smscounterArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <soap:operation soapAction="http://microsoft.com/webservices/Credites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetAllMessageArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetBankId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetCountSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <soap:operation soapAction="http://microsoft.com/webservices/SendBulkSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetAllMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetUserExp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetUserContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetUserContactArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetUserNumberArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <soap:operation soapAction="http://microsoft.com/webservices/Logins2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins">
+      <soap:operation soapAction="http://microsoft.com/webservices/Logins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetAllSendSmsArray" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetVerAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <soap:operation soapAction="http://microsoft.com/webservices/sendsmsGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <soap:operation soapAction="http://microsoft.com/webservices/GetCostSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSMSSoap12" type="tns:WSSMSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UserCharge">
+      <soap12:operation soapAction="http://microsoft.com/webservices/UserCharge" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetOtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <soap12:operation soapAction="http://microsoft.com/webservices/VerifyOtp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <soap12:operation soapAction="http://microsoft.com/webservices/PasswordForget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GeSMSNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetRegistePackageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <soap12:operation soapAction="http://microsoft.com/webservices/registerOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetMessageStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses21" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses50004" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetMessageStatuses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetPreNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetPreNum5000" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetFreeNum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetFreeNum5000" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GePackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsmsSimCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsms2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <soap12:operation soapAction="http://microsoft.com/webservices/Delsendsmsfuture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsmsfuture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsmsfuture2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsmsfuture3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <soap12:operation soapAction="http://microsoft.com/webservices/NazirSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <soap12:operation soapAction="http://microsoft.com/webservices/smscounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <soap12:operation soapAction="http://microsoft.com/webservices/smscounterArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <soap12:operation soapAction="http://microsoft.com/webservices/Credites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetAllMessageArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetBankId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetCountSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <soap12:operation soapAction="http://microsoft.com/webservices/SendBulkSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetAllMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetUserExp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetUserContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetUserContactArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetUserNumberArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <soap12:operation soapAction="http://microsoft.com/webservices/Logins2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins">
+      <soap12:operation soapAction="http://microsoft.com/webservices/Logins" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetAllSendSmsArray" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetVerAndroid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <soap12:operation soapAction="http://microsoft.com/webservices/sendsmsGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GetCostSms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSMSHttpGet" type="tns:WSSMSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="UserCharge">
+      <http:operation location="/UserCharge" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <http:operation location="/GetOtp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <http:operation location="/VerifyOtp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <http:operation location="/PasswordForget" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <http:operation location="/GeSMSNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <http:operation location="/GetRegistePackageList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <http:operation location="/registerOnline" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <http:operation location="/GetMessageStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <http:operation location="/GetMessageStatuses21" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <http:operation location="/GetMessageStatuses50004" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <http:operation location="/GetMessageStatuses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <http:operation location="/GetPreNum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <http:operation location="/GetPreNum5000" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <http:operation location="/GetFreeNum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <http:operation location="/GetFreeNum5000" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <http:operation location="/GePackage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <http:operation location="/sendsmsSimCard" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <http:operation location="/sendsms2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <http:operation location="/sendsms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <http:operation location="/Delsendsmsfuture" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <http:operation location="/sendsmsfuture" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <http:operation location="/sendsmsfuture2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <http:operation location="/sendsmsfuture3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <http:operation location="/NazirSend" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <http:operation location="/smscounter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <http:operation location="/smscounterArray" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <http:operation location="/Credites" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <http:operation location="/GetAllMessageArray" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <http:operation location="/GetBankId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <http:operation location="/GetCountSms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <http:operation location="/SendBulkSms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <http:operation location="/GetAllMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <http:operation location="/GetUserExp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <http:operation location="/GetUserContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <http:operation location="/GetUserContactArray" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <http:operation location="/GetUserNumberArray" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <http:operation location="/Logins2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <http:operation location="/GetState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <http:operation location="/GetCities" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <http:operation location="/GetAllSendSmsArray" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <http:operation location="/GetVerAndroid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <http:operation location="/sendsmsGuid" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <http:operation location="/GetCostSms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSSMSHttpPost" type="tns:WSSMSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UserCharge">
+      <http:operation location="/UserCharge" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtp">
+      <http:operation location="/GetOtp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOtp">
+      <http:operation location="/VerifyOtp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordForget">
+      <http:operation location="/PasswordForget" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeSMSNumber">
+      <http:operation location="/GeSMSNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistePackageList">
+      <http:operation location="/GetRegistePackageList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerOnline">
+      <http:operation location="/registerOnline" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <http:operation location="/GetMessageStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses21">
+      <http:operation location="/GetMessageStatuses21" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses50004">
+      <http:operation location="/GetMessageStatuses50004" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatuses">
+      <http:operation location="/GetMessageStatuses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum">
+      <http:operation location="/GetPreNum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreNum5000">
+      <http:operation location="/GetPreNum5000" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum">
+      <http:operation location="/GetFreeNum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreeNum5000">
+      <http:operation location="/GetFreeNum5000" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GePackage">
+      <http:operation location="/GePackage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsSimCard">
+      <http:operation location="/sendsmsSimCard" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms2">
+      <http:operation location="/sendsms2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsms">
+      <http:operation location="/sendsms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delsendsmsfuture">
+      <http:operation location="/Delsendsmsfuture" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture">
+      <http:operation location="/sendsmsfuture" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture2">
+      <http:operation location="/sendsmsfuture2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsfuture3">
+      <http:operation location="/sendsmsfuture3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NazirSend">
+      <http:operation location="/NazirSend" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounter">
+      <http:operation location="/smscounter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="smscounterArray">
+      <http:operation location="/smscounterArray" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Credites">
+      <http:operation location="/Credites" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageArray">
+      <http:operation location="/GetAllMessageArray" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankId">
+      <http:operation location="/GetBankId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountSms">
+      <http:operation location="/GetCountSms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkSms">
+      <http:operation location="/SendBulkSms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessage">
+      <http:operation location="/GetAllMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserExp">
+      <http:operation location="/GetUserExp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContact">
+      <http:operation location="/GetUserContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserContactArray">
+      <http:operation location="/GetUserContactArray" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNumberArray">
+      <http:operation location="/GetUserNumberArray" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logins2">
+      <http:operation location="/Logins2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetState">
+      <http:operation location="/GetState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <http:operation location="/GetCities" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSendSmsArray">
+      <http:operation location="/GetAllSendSmsArray" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerAndroid">
+      <http:operation location="/GetVerAndroid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendsmsGuid">
+      <http:operation location="/sendsmsGuid" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCostSms">
+      <http:operation location="/GetCostSms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSSMS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;b&gt;وب سرويس خدمات پيام کوتاه.&lt;/b&gt;</wsdl:documentation>
+    <wsdl:port name="WSSMSSoap" binding="tns:WSSMSSoap">
+      <soap:address location="http://my.mizbansms.ir/wssms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSMSSoap12" binding="tns:WSSMSSoap12">
+      <soap12:address location="http://my.mizbansms.ir/wssms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSMSHttpGet" binding="tns:WSSMSHttpGet">
+      <http:address location="http://my.mizbansms.ir/wssms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSSMSHttpPost" binding="tns:WSSMSHttpPost">
+      <http:address location="http://my.mizbansms.ir/wssms.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

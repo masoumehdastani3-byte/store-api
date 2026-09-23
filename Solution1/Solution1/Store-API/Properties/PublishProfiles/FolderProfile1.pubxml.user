@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Dastani\MyProject\store\Solution1\Solution1\Store-API\bin\app.publish\</_PublishTargetUrl>
+    <History>True|2026-08-25T13:45:09.9533027Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/10/2013 17:29:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>09/10/2013 17:29:20</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll">
+      <publishTime>08/25/2026 17:15:07</publishTime>
+    </File>
+    <File Include="bin/DataAccess.dll.config">
+      <publishTime>08/26/2026 11:48:01</publishTime>
+    </File>
+    <File Include="bin/DataAccess.pdb">
+      <publishTime>08/25/2026 17:15:07</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/17/2020 02:08:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/17/2020 02:08:56</publishTime>
+    </File>
+    <File Include="bin/InstagramApiSharp.dll">
+      <publishTime>02/01/2021 22:19:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.DataProtection.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNetCore.Http.Features.dll">
+      <publishTime>04/28/2017 00:23:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Binder.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Logging.Abstractions.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Options.ConfigurationExtensions.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Options.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>04/28/2017 00:23:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/28/2022 00:39:10</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/08/2023 07:09:56</publishTime>
+    </File>
+    <File Include="bin/Store-API.dll">
+      <publishTime>08/29/2026 14:21:49</publishTime>
+    </File>
+    <File Include="bin/Store-API.pdb">
+      <publishTime>08/29/2026 14:21:49</publishTime>
+    </File>
+    <File Include="bin/Store-API.XmlSerializers.dll">
+      <publishTime>08/29/2026 14:21:50</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>11/05/2016 09:25:52</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/28/2022 00:41:34</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>11/05/2016 09:26:46</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>04/19/2017 22:28:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/28/2022 00:41:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/28/2022 00:41:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/28/2022 00:41:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/28/2022 00:42:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/28/2022 00:42:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/28/2022 00:42:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/28/2022 00:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/28/2022 00:42:50</publishTime>
+    </File>
+    <File Include="bin/Telegram.Bot.dll">
+      <publishTime>08/20/2017 02:58:56</publishTime>
+    </File>
+    <File Include="bin/Telegram.Bot.Framework.dll">
+      <publishTime>08/26/2017 19:32:44</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>01/23/2014 13:57:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css.map">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css.map">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>05/22/2024 03:13:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/22/2024 03:13:42</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/22/2024 03:13:42</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/22/2024 03:13:42</publishTime>
+    </File>
+    <File Include="Properties/DataSources/System.Data.DataTable.datasource">
+      <publishTime>05/22/2024 03:57:58</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>05/22/2024 03:13:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/22/2024 03:13:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/22/2024 03:13:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/22/2024 03:13:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/22/2024 03:13:48</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>05/22/2024 03:13:42</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>05/22/2024 03:13:42</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/29/2026 12:53:51</publishTime>
+    </File>
+    <File Include="Views/PaymentCallback/Index.cshtml">
+      <publishTime>05/22/2024 04:48:56</publishTime>
+    </File>
+    <File Include="Views/ProductListElmaz/Index.cshtml">
+      <publishTime>05/22/2024 03:15:36</publishTime>
+    </File>
+    <File Include="Views/SepehrPaymentCallback/Index.cshtml">
+      <publishTime>08/29/2026 12:53:53</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/22/2024 03:15:36</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/22/2024 03:15:36</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/22/2024 03:15:36</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/22/2024 03:15:36</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/Cities.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/ContactUser.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/CostResult.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/expireUser.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/Package.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/QueryNum.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/QueryNum5000.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/QueryPackage.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/QuerySMSNumber.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/RecMsgUser.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/Reference.map">
+      <publishTime>05/22/2024 04:01:50</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/SendMsgUser.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/SeUser.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/SmsCounterResult.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/States.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.mizbansms.my/VerAndroid.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec/ClientPaymentResponseDataBase.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec/ClientSaleResponseData.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec/Reference.map">
+      <publishTime>05/22/2024 04:15:04</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec1/ClientConfirmResponseData.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec1/ClientConfirmResponseDataAddData.datasource">
+      <publishTime>05/23/2024 05:18:30</publishTime>
+    </File>
+    <File Include="Web References/ir.shaparak.pec1/Reference.map">
+      <publishTime>05/22/2024 04:41:56</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/29/2026 13:00:17</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

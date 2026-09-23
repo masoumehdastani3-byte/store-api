@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BankAcount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Terminal" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReturnURL" Type="varchar" MaxLength="150" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="BasicData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title_EN" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupTypeName" Type="nvarchar" MaxLength="150" />
+    <Property Name="GroupTypeName_En" Type="nvarchar" MaxLength="150" />
+    <Property Name="CodeINT" Type="int" />
+    <Property Name="CodeChar" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Show" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tell" Type="varchar" MaxLength="14" />
+    <Property Name="Fax" Type="varchar" MaxLength="14" />
+    <Property Name="WatsUpNumber" Type="varchar" MaxLength="14" />
+    <Property Name="SMSNumber" Type="varchar" MaxLength="14" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="WebsiteUrl" Type="varchar" MaxLength="150" />
+    <Property Name="TelegramUrl" Type="varchar" MaxLength="150" />
+    <Property Name="TelegramBotToken" Type="nvarchar" MaxLength="100" />
+    <Property Name="TelegramChanalName" Type="nvarchar" MaxLength="100" />
+    <Property Name="TelegramChatID" Type="varchar" MaxLength="50" />
+    <Property Name="TelegramUserChatID" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelegramUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="InstagramUrl" Type="varchar" MaxLength="150" />
+    <Property Name="InstagramUserName" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstagramPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="LogoUrl" Type="varchar" MaxLength="150" />
+    <Property Name="BackgroudUrl" Type="varchar" MaxLength="150" />
+    <Property Name="Mobile" Type="varchar" MaxLength="14" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="CountryID_BasicData" Type="int" />
+    <Property Name="CityID_BasicData" Type="int" />
+    <Property Name="CompanyGroupID_BaseData" Type="int" />
+    <Property Name="ContractName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsDefault" Type="bit" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="HeaderColor" Type="varchar" MaxLength="10" />
+    <Property Name="ButtonColor" Type="varchar" MaxLength="10" />
+    <Property Name="HeaderFontColor" Type="varchar" MaxLength="10" />
+    <Property Name="ButtonFontColor" Type="varchar" MaxLength="10" />
+    <Property Name="PriceColor" Type="varchar" MaxLength="10" />
+    <Property Name="PriceFontColor" Type="varchar" MaxLength="10" />
+    <Property Name="VisitedCount" Type="int" />
+    <Property Name="isParent" Type="int" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="NamadTag" Type="ntext" />
+    <Property Name="LicenseTag1" Type="ntext" />
+    <Property Name="LicenseTag2" Type="nvarchar" MaxLength="150" />
+    <Property Name="VideoDefault_ImageUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="SocialNetworks1_LogUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="SocialNetworks2_LogUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="SocialNetworks1_Url" Type="nvarchar" MaxLength="150" />
+    <Property Name="SocialNetworks2_Url" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="CompanyNameDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CompanyProductGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="ProductGroupID" Type="int" />
+  </EntityType>
+  <EntityType Name="CompanySettings">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="SettingName" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="SettingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SettinCaption" Type="nvarchar" MaxLength="50" />
+    <Property Name="SettingValue" Type="nvarchar" MaxLength="200" />
+    <Property Name="Descriptions" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="CompanyTransportation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="TransportationCalculate_BasicData" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Factor" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TransportationPrice" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="IsFree" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="LogUser" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CourrencyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="CodeMelli" Type="varchar" MaxLength="10" />
+    <Property Name="Mobile" Type="varchar" MaxLength="14" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PageGenerator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="PageSystemCode" Type="int" />
+    <Property Name="PageTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageLocationID" Type="int" />
+    <Property Name="PageLocation" Type="nvarchar" MaxLength="50" />
+    <Property Name="PageContent" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="PageMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="MenuTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="SystemCode" Type="int" />
+    <Property Name="SystemName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="PurchaseID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateDate_Shamsi" Type="varchar" MaxLength="10" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PaymentType" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Error" Type="nvarchar" MaxLength="400" />
+    <Property Name="BankRefrence" Type="nvarchar" MaxLength="50" />
+    <Property Name="Token" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="ProductGroupID" Type="int" />
+    <Property Name="TransportationID" Type="int" />
+    <Property Name="PriceBuy" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OffPercent" Type="int" />
+    <Property Name="IsOffPercent" Type="bit" />
+    <Property Name="PriceSales" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Currency" Type="varchar" MaxLength="10" />
+    <Property Name="Positive" Type="int" />
+    <Property Name="Negative" Type="int" />
+    <Property Name="CreaeDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="Acive" Type="bit" />
+    <Property Name="IsAvailable" Type="bit" />
+    <Property Name="AvailableCount" Type="int" />
+    <Property Name="SalesCount" Type="int" />
+    <Property Name="IsSpecialSales" Type="bit" />
+    <Property Name="FromDateSpecialSales_Mila" Type="date" />
+    <Property Name="FromDateSpecialSales" Type="varchar" MaxLength="10" />
+    <Property Name="ToDateSpecialSales_Mila" Type="date" />
+    <Property Name="ToDateSpecialSales" Type="varchar" MaxLength="10" />
+    <Property Name="BarCode" Type="varchar" MaxLength="50" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="SumerySpecification" Type="nvarchar" MaxLength="400" />
+    <Property Name="IsViewInstagram" Type="bit" />
+    <Property Name="IsViewTelegram" Type="bit" />
+    <Property Name="IsSendInstagram" Type="bit" />
+    <Property Name="IsSendTelegram" Type="bit" />
+    <Property Name="TelegramError" Type="nvarchar" MaxLength="400" />
+    <Property Name="InstagramError" Type="nvarchar" MaxLength="400" />
+    <Property Name="InstagramTag" Type="nvarchar" MaxLength="400" />
+    <Property Name="TelegramTimeSend" Type="datetime" />
+    <Property Name="IstagramTimeSend" Type="datetime" />
+    <Property Name="VisitedCount" Type="int" />
+    <Property Name="UpdateDateAvailableCount" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="ParentLangID" Type="int" />
+    <Property Name="IsShow" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ProductSpecificationID" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title_En" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="IsLastChid" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductGroupDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductGroupID" Type="int" />
+    <Property Name="GroupTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsShowSearch" Type="bit" />
+    <Property Name="IsShowEasySearch" Type="bit" />
+    <Property Name="GroupTypeName_En" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Image_Url" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductSpecification">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="GroupType" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupTypeName" Type="nvarchar" MaxLength="150" />
+    <Property Name="GroupTypeName_En" Type="nvarchar" MaxLength="150" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Show" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductUserComment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="LogIP" Type="varchar" MaxLength="20" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="DateShamsi" Type="varchar" MaxLength="11" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="TotalDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Description_Admin" Type="nvarchar" MaxLength="200" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="TransportationAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PurchaseDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShoppingCount" Type="int" />
+    <Property Name="ProducName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AvalaibleCount" Type="int" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UnitDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalUnitDisount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SettingKey" Type="nvarchar" MaxLength="50" />
+    <Property Name="SettingValue" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="UserAccess">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SelectorID" Type="varchar" MaxLength="50" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="ControlID" Type="varchar" MaxLength="50" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="IsShow" Type="bit" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="150" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="LastDateVisit" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Family" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="14" />
+    <Property Name="Email" Type="varchar" MaxLength="150" />
+    <Property Name="NationalCode" Type="varchar" MaxLength="10" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="TokenID" Type="varchar" MaxLength="150" />
+    <Property Name="FullName_En" Type="nvarchar" MaxLength="150" />
+    <Property Name="Tell" Type="varchar" MaxLength="14" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ParentLangID" Type="int" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="LogUser" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="UserSubMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyIDMenu" Type="int" />
+    <Property Name="TitleMenu" Type="nvarchar" MaxLength="50" />
+    <Property Name="ControlID" Type="varchar" MaxLength="50" />
+    <Property Name="SelectorID" Type="varchar" MaxLength="50" />
+    <Property Name="Lang" Type="varchar" MaxLength="10" />
+    <Property Name="SortMenu" Type="int" />
+    <Property Name="IsShowMenu" Type="bit" />
+    <Property Name="ActiveMenu" Type="bit" />
+  </EntityType>
+  <Association Name="FK_CompanyNameDetail_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="CompanyNameDetail" Type="Self.CompanyNameDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyNameDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompanyProductGroup_ProductGroup">
+    <End Role="ProductGroup" Type="Self.ProductGroup" Multiplicity="0..1" />
+    <End Role="CompanyProductGroup" Type="Self.CompanyProductGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CompanyProductGroup">
+        <PropertyRef Name="ProductGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Currency">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyCode" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductGroup">
+    <End Role="ProductGroup" Type="Self.ProductGroup" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProductGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDescription_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductDescription" Type="Self.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDetail_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductDetail" Type="Self.ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductSpecification_ProductGroup">
+    <End Role="ProductGroup" Type="Self.ProductGroup" Multiplicity="1" />
+    <End Role="ProductSpecification" Type="Self.ProductSpecification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductSpecification">
+        <PropertyRef Name="GroupType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductUserComment_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductUserComment" Type="Self.ProductUserComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ProductUserComment">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ProductGroup_SelectRecursives" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_BaseData_GroupSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="CodeChar" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_BaseData_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="GroupType" Type="varchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodeChar" Type="varchar" Mode="In" />
+    <Parameter Name="CodeINT" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_BasicDate_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="GroupType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Company_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="IP" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CountryID_BasicData" Type="int" Mode="In" />
+    <Parameter Name="CityID_BasicData" Type="int" Mode="In" />
+    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsDefaultCompany" Type="bit" Mode="In" />
+    <Parameter Name="CompanyGroupID_BaseData" Type="int" Mode="In" />
+    <Parameter Name="WebsiteUrl" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CompanyProductGroup_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CompanySettings_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_CompanyTransportation_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="TransportationCalculate_BasicData" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Customer_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Mobile" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodeMelli" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_PageGenerator_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="LogUser" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="PageLocationID" Type="int" Mode="In" />
+    <Parameter Name="Content" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_PageMenu_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Payment_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="PurchaseID" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Product_Panel_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="BarCode" Type="varchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsAvailable" Type="bit" Mode="In" />
+    <Parameter Name="Acive" Type="bit" Mode="In" />
+    <Parameter Name="IsViewTelegram" Type="bit" Mode="In" />
+    <Parameter Name="IsViewInstagram" Type="bit" Mode="In" />
+    <Parameter Name="IsSendInstagram" Type="bit" Mode="In" />
+    <Parameter Name="IsSendTelegram" Type="bit" Mode="In" />
+    <Parameter Name="IsSpecialSales" Type="bit" Mode="In" />
+    <Parameter Name="Specification" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Product_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="IsSpecialSales" Type="bit" Mode="In" />
+    <Parameter Name="IsNewCreate" Type="bit" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="StringParamGroupType" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="StringParamGroupName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="OrderByColumn" Type="varchar" Mode="In" />
+    <Parameter Name="OrderDirection" Type="int" Mode="In" />
+    <Parameter Name="AvailableCount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Product_Select_Elmaz" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Product_Select_Torob" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="Url" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductDatail_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="IsShowSearch" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductDetail_Specification_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductGroup_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="ParentID" Type="int" Mode="In" />
+    <Parameter Name="parent_Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="child_Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsLastChid" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductGroupDetail_GroupBy_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductGroupDetail_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="ProductGroupID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductImage_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductSameSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductSpecification_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="GroupType" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="GroupTypeName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ProductUserComment_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="Loguser" Type="varchar" Mode="In" />
+    <Parameter Name="LogIP" Type="varchar" Mode="In" />
+    <Parameter Name="ProductID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_Purchase_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SystemParameterProcudure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Sp_Name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SystemTableCOLUMN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_TableCOLUMN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UserAcessMenu_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="ControlID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="IsShow" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UserMenu_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="IsShow" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UserNotAcessMenu_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="ControlID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="IsShow" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UserProfile_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UserProfile_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Family" Type="nvarchar" Mode="In" />
+    <Parameter Name="RoleID" Type="int" Mode="In" />
+    <Parameter Name="Mobile" Type="varchar" Mode="In" />
+    <Parameter Name="TokenID" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="NationalCode" Type="varchar" Mode="In" />
+    <Parameter Name="IsDefaultCompany" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UserRole_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ParentLangID" Type="int" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UserSubMenu_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Lang" Type="varchar" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="ControlID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="IsShow" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_VisitedHistory_GroupBy_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromTime" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="StoreModelStoreContainer">
+    <EntitySet Name="BankAcount" EntityType="Self.BankAcount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BasicData" EntityType="Self.BasicData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyNameDetail" EntityType="Self.CompanyNameDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyProductGroup" EntityType="Self.CompanyProductGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanySettings" EntityType="Self.CompanySettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyTransportation" EntityType="Self.CompanyTransportation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageGenerator" EntityType="Self.PageGenerator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageMenu" EntityType="Self.PageMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDescription" EntityType="Self.ProductDescription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductGroup" EntityType="Self.ProductGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductGroupDetail" EntityType="Self.ProductGroupDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductImage" EntityType="Self.ProductImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductSpecification" EntityType="Self.ProductSpecification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductUserComment" EntityType="Self.ProductUserComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase" EntityType="Self.Purchase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PurchaseDetails" EntityType="Self.PurchaseDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccess" EntityType="Self.UserAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMenu" EntityType="Self.UserMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSubMenu" EntityType="Self.UserSubMenu" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CompanyNameDetail_Company" Association="Self.FK_CompanyNameDetail_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyNameDetail" EntitySet="CompanyNameDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompanyProductGroup_ProductGroup" Association="Self.FK_CompanyProductGroup_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroup" />
+      <End Role="CompanyProductGroup" EntitySet="CompanyProductGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Currency" Association="Self.FK_Product_Currency">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductGroup" Association="Self.FK_Product_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroup" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDescription_Product" Association="Self.FK_ProductDescription_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDetail_Product" Association="Self.FK_ProductDetail_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductSpecification_ProductGroup" Association="Self.FK_ProductSpecification_ProductGroup">
+      <End Role="ProductGroup" EntitySet="ProductGroup" />
+      <End Role="ProductSpecification" EntitySet="ProductSpecification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductUserComment_Product" Association="Self.FK_ProductUserComment_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductUserComment" EntitySet="ProductUserComment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
